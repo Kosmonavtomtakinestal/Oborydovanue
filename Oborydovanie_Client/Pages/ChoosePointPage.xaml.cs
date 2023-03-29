@@ -29,7 +29,15 @@ namespace Oborydovanie_Client.Pages
 
         private void SelBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            if (PointsCB.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите пункт выдачи", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                SaveSomeData.point = PointsCB.SelectedItem as PointOfIssue;
+                SaveSomeData.main.MainFrame.Navigate(new ProductsPage());
+            }
         }
 
         private void AccountBTN_Click(object sender, RoutedEventArgs e)

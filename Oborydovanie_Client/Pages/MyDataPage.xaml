@@ -49,25 +49,28 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Row="1" Grid.Column="1" Text="Логин"></TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Login}" x:Name="LogTB"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Login}" IsEnabled="False" x:Name="LoginTb"></TextBox>
 
                 <TextBlock Grid.Row="4" Grid.Column="1" Text="Пароль"></TextBlock>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Password}" x:Name="PaTB"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Password}" x:Name="PasswordTb"></TextBox>
 
-                <TextBlock Grid.Row="7" Grid.Column="1" Text="Телефон"></TextBlock>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Phone}"></TextBox>
+                <TextBlock Grid.Row="7" Grid.Column="1" Text="Повтор пароля"></TextBlock>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Password}" x:Name="ReturnPasswordTb"></TextBox>
+
+                <TextBlock Grid.Row="10" Grid.Column="3" Text="Телефон"></TextBlock>
+                <TextBox Grid.Row="11" Grid.Column="3" Text="{Binding Phone}" x:Name="PhoneTb"></TextBox>
 
                 <TextBlock Grid.Row="10" Grid.Column="1" Text="Серия и номер пасспорта"></TextBlock>
-                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Passport}"></TextBox>
+                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Passport}" x:Name="PassportTb"></TextBox>
 
                 <TextBlock Grid.Row="1" Grid.Column="3" Text="Фамилия"></TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Surname}"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Surname}" x:Name="SurnameTb"></TextBox>
 
                 <TextBlock Grid.Row="4" Grid.Column="3" Text="Имя"></TextBlock>
-                <TextBox Grid.Row="5" Grid.Column="3" Text="{Binding Name}"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="3" Text="{Binding Name}" x:Name="NameTb"></TextBox>
                 
                 <TextBlock Grid.Row="7" Grid.Column="3" Text="Фамилия"></TextBlock>
-                <TextBox Grid.Row="8" Grid.Column="3" Text="{Binding Patronymic}"></TextBox>
+                <TextBox Grid.Row="8" Grid.Column="3" Text="{Binding Patronymic}" x:Name="PatronymicTb"></TextBox>
 
                 <Button x:Name="BackBTN" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" Content="Назад" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="13" Click="BackBTN_Click">
                     <Button.Style>

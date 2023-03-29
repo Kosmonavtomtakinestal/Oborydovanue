@@ -48,26 +48,10 @@ namespace Oborydovanie_Client.Pages
             {
                 MessageBox.Show("Пароли не совпадают", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else if (Connection.db.Client.ToList().Find(x => x.Login == LoginTb.Text.Trim()) != null)
-            {
-                MessageBox.Show("Такой логин уже существует", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
             else
             {
-                Client client = new Client()
-                {
-                    Login = LoginTb.Text,
-                    Password = PasswordTb.Text,
-                    Surname = SurnameTb.Text,
-                    Name = NameTb.Text,
-                    Patronymic = PatronymicTb.Text,
-                    Phone = PhoneTb.Text,
-                    Passport = PassportTb.Text
-                };
-                Connection.db.Client.Add(client);
                 Connection.db.SaveChanges();
                 MessageBox.Show("Успешно", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                SaveSomeData.main.MainFrame.Navigate(new AuthPage());
             }
         }
     }

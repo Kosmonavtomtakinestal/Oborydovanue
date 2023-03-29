@@ -164,7 +164,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RegPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -179,8 +187,14 @@
     <Compile Include="Pages\MyDataPage.xaml.cs">
       <DependentUpon>MyDataPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ProductsPage.xaml.cs">
+      <DependentUpon>ProductsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RegPage.xaml.cs">
       <DependentUpon>RegPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RentPage.xaml.cs">
+      <DependentUpon>RentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SaveSomeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -230,6 +244,7 @@
       <DependentUpon>ModelOborudovanie.edmx</DependentUpon>
       <LastGenOutput>ModelOborudovanie.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\point.png" />
     <Resource Include="Resources\accaunt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

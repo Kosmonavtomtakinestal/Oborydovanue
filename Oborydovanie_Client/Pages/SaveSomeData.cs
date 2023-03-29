@@ -14,5 +14,7 @@ namespace Oborydovanie_Client.Pages
         public static Client client;
 
         public static PointOfIssue point;
+
+        public static Product ProdToRent;
     }
 }
