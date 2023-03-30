@@ -42,7 +42,7 @@ namespace Oborydovanie_Client.Pages
 
         private void AccountBTN_Click(object sender, RoutedEventArgs e)
         {
-            SaveSomeData.main.MainFrame.Navigate(new MyDataPage(SaveSomeData.client));
+            SaveSomeData.main.MainFrame.Navigate(new MyDataPage(SaveSomeData.client, 1));
         }
     }
 }

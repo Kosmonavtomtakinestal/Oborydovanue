@@ -16,16 +16,17 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="DeliveriesList" Margin="15 20 15 4" d:ItemsSource="{d:SampleData ItemCount=3}"
-                  ItemsSource="{Binding Deliveries}">
+        <ListView x:Name="DeliveriesList" Margin="15 20 15 30" d:ItemsSource="{d:SampleData ItemCount=3}"
+                  ItemsSource="{Binding Deliveries}" SelectionMode="Single">
             <ListView.ItemTemplate>
                 <DataTemplate DataType="{x:Type db:Delivery}">
-                    <StackPanel Width="240" Height="115">
+
+                    <StackPanel Width="240" Height="100">
 
                         <ListView ItemsSource="{Binding Path=DeliveryProducts}">
-                            <ListView.ItemTemplate>
-                                <DataTemplate DataType="{x:Type db:DeliveryProducts}">
-                                    <StackPanel Orientation="Horizontal">
+                            <ListView.ItemTemplate >
+                                <DataTemplate DataType="{x:Type db:DeliveryProducts}" >
+                                    <StackPanel Orientation="Horizontal" >
                                         <TextBlock Text="{Binding Stock.Product.Name}"/>
                                         <TextBlock Text=" "/>
                                         <TextBlock Text="{Binding Count}"/>
@@ -35,12 +36,25 @@
                             </ListView.ItemTemplate>
                         </ListView>
                         <TextBlock Text="{Binding PointOfIssue.Addres}"/>
-                        <CheckBox Content="Принять" x:Name="GetDeliverzCB" Checked="GetDeliverzCB_Checked"/>
-                        <TextBlock Text="Время начала доставки"/>
+                        <TextBlock Text="{Binding StartTime}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding EnabledSP}" Value="False">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
+
+        <Button Height="20" Width="80" VerticalAlignment="Bottom" Content="Принять" Click="Button_Click"/>
+
+
 
 
         <Grid Height="30" Margin="15"  Grid.Row="1">

@@ -25,6 +25,7 @@ namespace Oborydovanue_Deliverier.DataBase
         public string Name { get; set; }
         public string Discription { get; set; }
         public byte[] Photo { get; set; }
+        public string Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compound> Compound { get; set; }

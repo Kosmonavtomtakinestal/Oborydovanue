@@ -52,7 +52,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BeginDateTime" Type="date" Nullable="false" />
+          <Property Name="BeginDateTime" Type="datetime" />
           <Property Name="IdPointOfIssue" Type="int" Nullable="false" />
           <Property Name="IdDeliverier" Type="int" Nullable="false" />
         </EntityType>
@@ -128,6 +128,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Rent">
           <Key>
@@ -698,7 +699,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BeginDateTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="BeginDateTime" Type="DateTime" Precision="3" />
           <Property Name="IdPointOfIssue" Type="Int32" Nullable="false" />
           <Property Name="IdDeliverier" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Delivered" Relationship="ArendaModel.FK_Delivered_Delivery" FromRole="Delivery" ToRole="Delivered" />
@@ -792,6 +793,7 @@
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Compound" Relationship="ArendaModel.FK_Compound_Product" FromRole="Product" ToRole="Compound" />
           <NavigationProperty Name="Stock" Relationship="ArendaModel.FK_Stock_Product" FromRole="Product" ToRole="Stock" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Rent">
           <Key>
@@ -1253,6 +1255,7 @@
           <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="ArendaModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="Discription" ColumnName="Discription" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

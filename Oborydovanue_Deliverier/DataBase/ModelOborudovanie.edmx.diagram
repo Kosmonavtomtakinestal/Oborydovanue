@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b78a06b59e734210ab330b7e109ccc20" Name="Diagram1" ZoomLevel="36">
+      <Diagram DiagramId="b78a06b59e734210ab330b7e109ccc20" Name="Diagram1" ZoomLevel="59">
         <EntityTypeShape EntityType="ArendaModel.Client" Width="1.5" PointX="8" PointY="1.375" />
         <EntityTypeShape EntityType="ArendaModel.Compound" Width="1.5" PointX="3" PointY="4" />
         <EntityTypeShape EntityType="ArendaModel.Delivered" Width="1.5" PointX="10.25" PointY="15.125" />

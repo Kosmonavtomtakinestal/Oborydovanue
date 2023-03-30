@@ -25,35 +25,21 @@ namespace Oborydovanie_Client.Pages
             InitializeComponent();
         }
 
-        private void SetTime_Click(object sender, RoutedEventArgs e)
+        private void ToRentBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (StartCal.SelectedDate == null || EndCal.SelectedDate == null)
+            if (TimeStart.Text.Trim() == "" || CountHour.Text.Trim() == "")
             {
-                MessageBox.Show("Выберите все даты", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Заполните все поля", "Уыедомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                TimeStart.Text = StartCal.SelectedDate.ToString();
-                TimeEnd.Text = EndCal.SelectedDate.ToString();
-                RentMenu.Visibility = Visibility.Visible;
-                CalMenu.Visibility = Visibility.Collapsed;
+                MessageBox.Show($"Заявка успешно оформлена\nПриходите в точку выдачи по адресу {SaveSomeData.point.Addres}", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
-        private void AccountBTN_Click(object sender, RoutedEventArgs e)
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void PointBTN_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TimeStart_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            RentMenu.Visibility = Visibility.Collapsed;
-            CalMenu.Visibility = Visibility.Visible;
+            SaveSomeData.main.MainFrame.Navigate(new ProductsPage());
         }
     }
 }
