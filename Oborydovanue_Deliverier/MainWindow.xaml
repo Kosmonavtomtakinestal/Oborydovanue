@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Oborydovanue_Deliverier"
         mc:Ignorable="d"
         Title="Доставщик" Height="600" Width="300"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF494949">
-    <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"  />
-
-
+    
+    <Grid><Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"  />
+</Grid>
 </Window>
