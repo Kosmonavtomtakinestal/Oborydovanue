@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="24deace9d1ff4cb4a8ca87762b1e4a5a" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="ArendaModel.Client" Width="1.5" PointX="11" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Compound" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Delivered" Width="1.5" PointX="10.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Deliverier" Width="1.5" PointX="5.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Delivery" Width="1.5" PointX="8" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.DeliveryProducts" Width="1.5" PointX="10.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Engineer" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Manager" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Material" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.OrganizationEmployee" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.PointOfIssue" Width="1.5" PointX="5.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Product" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Rent" Width="1.5" PointX="13.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Status" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Stock" Width="1.5" PointX="11" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.StoreEmployee" Width="1.5" PointX="8" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Supplier" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.Supply" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArendaModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="ArendaModel.FK_Rent_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Compound_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Compound_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Delivered_Delivery" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Delivered_StoreEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Delivery_Deliverier" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Delivery_PointOfIssue" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_DeliveryProducts_Delivery" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_DeliveryProducts_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Order_Engineer" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Supply_Manager" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Order_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Supply_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Stock_PointOfIssue" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_StoreEmployee_PointOfIssue" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Stock_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Rent_Stock" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Rent_StoreEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Supply_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="ArendaModel.FK_Supply_Supplier" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
