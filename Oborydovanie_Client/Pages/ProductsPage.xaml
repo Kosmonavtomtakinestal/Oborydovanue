@@ -58,7 +58,8 @@
                           Width="100"
                           Margin="10 0 10 0"
                           x:Name="SortCB">
-                    <ComboBoxItem Content=""/>
+                    <ComboBoxItem Content="Цена ↑"/>
+                    <ComboBoxItem Content="Цена ↓"/>
                 </ComboBox>
 
             </StackPanel>
