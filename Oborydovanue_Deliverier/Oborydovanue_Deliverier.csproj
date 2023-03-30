@@ -169,6 +169,7 @@
       <DependentUpon>DeliveriesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SaveSomeData.cs" />
+    <Compile Include="PartialClass\Delivery.Extension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

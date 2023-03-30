@@ -22,17 +22,25 @@ namespace Oborydovanie_Client.Pages
     public partial class MyDataPage : Page
     {
         public static Client client;
-
-        public MyDataPage(Client _client)
+        public int i;
+        public MyDataPage(Client _client, int _i)
         {
             InitializeComponent();
             client = _client;
             DataContext = client;
+            i = _i;
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-            SaveSomeData.main.MainFrame.Navigate(new ChoosePointPage());
+            if (i == 1)
+            {
+                SaveSomeData.main.MainFrame.Navigate(new ChoosePointPage());
+            }
+            else if (i == 2)
+            {
+                SaveSomeData.main.MainFrame.Navigate(new ProductsPage());
+            }
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
