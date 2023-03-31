@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oborydovanie_Client", "Obor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oborydovanue_Manager", "Oborydovanue_Manager\Oborydovanue_Manager.csproj", "{9E2EC838-AF95-42E6-AE8E-37F53E45F438}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "instrymentu", "instrymentu\instrymentu.csproj", "{9EE07E16-5C8A-4C4D-A743-FB309E5E17F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9E2EC838-AF95-42E6-AE8E-37F53E45F438}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E2EC838-AF95-42E6-AE8E-37F53E45F438}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E2EC838-AF95-42E6-AE8E-37F53E45F438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE07E16-5C8A-4C4D-A743-FB309E5E17F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE07E16-5C8A-4C4D-A743-FB309E5E17F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE07E16-5C8A-4C4D-A743-FB309E5E17F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE07E16-5C8A-4C4D-A743-FB309E5E17F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
