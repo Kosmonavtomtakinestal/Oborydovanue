@@ -1,12 +1,12 @@
-﻿<Application x:Class="Oborydovanue_Manager.App"
+﻿<Application x:Class="instrymentu.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Oborydovanue_Manager"
+             xmlns:local="clr-namespace:instrymentu"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Pages/Dictionary1.xaml"/>
+                <ResourceDictionary Source="StyleKode.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
