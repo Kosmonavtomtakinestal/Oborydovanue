@@ -14,11 +14,12 @@ namespace Oborydovanue_Deliverier.Pages
     /// </summary>
     public partial class DeliveriesPage : Page
     {
-        public IEnumerable<Delivery> Deliveries => Connection.db.Delivery.Local.Where(x => x.IdDeliverier == SaveSomeData.deliverier.Id);
+        public IEnumerable<Delivery> Deliveries => Connection.db.Delivery.Local.Where(x => x.IdDeliverier == SaveSomeData.deliverier.Id && Connection.db.Delivered.Local.FirstOrDefault(c => c.Delivery == x) == null);
 
         public DeliveriesPage()
         {
             Connection.db.Delivery.Load();
+            Connection.db.Delivered.Load();
 
             InitializeComponent();
 

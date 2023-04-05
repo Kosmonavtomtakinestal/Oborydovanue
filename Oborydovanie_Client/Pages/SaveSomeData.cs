@@ -16,5 +16,7 @@ namespace Oborydovanie_Client.Pages
         public static PointOfIssue point;
 
         public static Product ProdToRent;
+
+        public static Stock stock;
     }
 }

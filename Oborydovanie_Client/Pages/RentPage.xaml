@@ -53,17 +53,9 @@
 
                 <StackPanel x:Name="SelTime" Grid.RowSpan="5" Grid.ColumnSpan="3" Visibility="Collapsed">
 
-                    <Calendar x:Name="StartTimeCalendar" SelectionMode="SingleDate" MouseLeave="StartTimeCalendar_MouseLeave"/>
-
-                    <StackPanel VerticalAlignment="Center">
-
-                        <TextBox x:Name="TimeStartTB" Width="40" Height="20" />
-
-                        <Button x:Name="ReadyDateBTN" Click="ReadyDateBTN_Click" Width="40" Height="20" MouseLeave="ReadyDateBTN_MouseLeave" />
-
-                    </StackPanel>
-
-                    
+                    <Calendar x:Name="StartTimeCalendar" SelectionMode="SingleDate" 
+                              SelectedDatesChanged="StartTimeCalendar_SelectedDatesChanged" 
+                              VerticalAlignment="Center"/>
 
                 </StackPanel>
 
@@ -77,11 +69,11 @@
 
                     <TextBlock Text="Дата начала " FontSize="20"/>
 
-                    <TextBox x:Name="TimeStart" Width="100" Margin="5 0 5 0" MouseDown="TimeStart_MouseDown" MouseEnter="TimeStart_MouseEnter"></TextBox>
+                    <TextBox x:Name="TimeStart" Width="100" Margin="5 0 5 0" MouseDown="TimeStart_MouseDown"></TextBox>
 
-                    <TextBlock Text="Количество часов " FontSize="20"/>
+                    <TextBlock Text="Количество дней " FontSize="20"/>
 
-                    <TextBox x:Name="CountHour"  Width="100" Margin="5 0 5 0"></TextBox>
+                    <TextBox x:Name="CountDay"  Width="100" Margin="5 0 5 0" TextChanged="CountDay_TextChanged" PreviewTextInput="CountDay_PreviewTextInput"></TextBox>
                     
                 </StackPanel>
 
@@ -113,6 +105,7 @@
                             </Setter>
                         </Style>
                     </Button.Style>
+                    
                 </Button>
 
                 
