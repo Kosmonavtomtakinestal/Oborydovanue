@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Oborydovanue_Deliverier.DataBase;
+using Oborydovanue_Manager.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,29 @@ namespace Oborydovanue_Manager
         public MainWindow()
         {
             InitializeComponent();
+            SaveSomeData.main = this;
+           
+        }
+        private void Avtor_Click(object sender, RoutedEventArgs e)
+        {
+            if (LoginTb.Text.Trim() == "" || PasswordTb.Text.Trim() == "")
+            {
+                MessageBox.Show("Заполните все поля", "Уведомления", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+
+                SaveSomeData.manager = Connection.db.Manager.ToList().Find(x => x.Login == LoginTb.Text.Trim() && x.Password == PasswordTb.Text.Trim());
+                if (SaveSomeData.manager != null)
+                {
+                    new ManagerWork().Show();
+                   Close();
+                }
+                else
+                {
+                    MessageBox.Show("Не верно введены данные", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
         }
     }
 }
