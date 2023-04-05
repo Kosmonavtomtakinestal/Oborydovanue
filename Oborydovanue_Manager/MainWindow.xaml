@@ -24,7 +24,7 @@
                 </TextBlock.Style>
             </TextBlock>
 
-            <TextBox x:Name="PasswordTb" Foreground="Black" Height="30" FontSize="18" Width="150"   Background="White" />
+            <TextBox x:Name="PasswordTb" Foreground="Black" Height="30" FontSize="18" Width="150"  FontWeight="Bold" Background="White" />
             <TextBlock IsHitTestVisible="False" FontSize="18" Text="Пароль" FontWeight="Bold" Height="30" Foreground="Black" Margin="38,84,24,84"  >
                 <TextBlock.Style>
                     <Style TargetType="{x:Type TextBlock}">

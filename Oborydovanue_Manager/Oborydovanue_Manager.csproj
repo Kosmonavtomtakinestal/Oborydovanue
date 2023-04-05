@@ -160,10 +160,24 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PageEng.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\ManagerWork.xaml.cs">
       <DependentUpon>ManagerWork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageEng.xaml.cs">
+      <DependentUpon>PageEng.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageManager.xaml.cs">
+      <DependentUpon>PageManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SaveSomeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
