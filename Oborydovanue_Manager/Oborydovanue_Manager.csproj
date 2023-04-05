@@ -72,6 +72,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ArendaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArendaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\Client.cs">
       <DependentUpon>ModelOborudovanie.tt</DependentUpon>
     </Compile>
@@ -201,6 +206,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelOborudovanie.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ArendaDataSet.xsc">
+      <DependentUpon>ArendaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ArendaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ArendaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ArendaDataSet.xss">
+      <DependentUpon>ArendaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="DataBase\ModelOborudovanie.edmx.diagram">
       <DependentUpon>ModelOborudovanie.edmx</DependentUpon>
     </None>

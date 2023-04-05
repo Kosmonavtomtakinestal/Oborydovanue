@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ArendaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище ArendaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="Id" />
@@ -184,7 +184,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdOrder" Type="int" Nullable="false" />
           <Property Name="IdSupplier" Type="int" Nullable="false" />
-          <Property Name="IdManager" Type="int" Nullable="false" />
+          <Property Name="IdManager" Type="int" />
           <Property Name="IdStatus" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -390,7 +390,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Supply_Manager">
-          <End Role="Manager" Type="Self.Manager" Multiplicity="1" />
+          <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
           <End Role="Supply" Type="Self.Supply" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Manager">
@@ -539,8 +539,7 @@
             <End Role="Supply" EntitySet="Supply" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ArendaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -759,7 +758,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdOrder" Type="Int32" Nullable="false" />
           <Property Name="IdSupplier" Type="Int32" Nullable="false" />
-          <Property Name="IdManager" Type="Int32" Nullable="false" />
+          <Property Name="IdManager" Type="Int32" />
           <Property Name="IdStatus" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Manager" Relationship="Self.FK_Supply_Manager" FromRole="Supply" ToRole="Manager" />
           <NavigationProperty Name="Order" Relationship="Self.FK_Supply_Order" FromRole="Supply" ToRole="Order" />

@@ -9,7 +9,7 @@
       DataContext="{Binding RelativeSource={RelativeSource Self}}"
       Title="PageEng">
 
-    <ListView x:Name="ListEng" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+    <ListView x:Name="ListEng" ItemsSource="{Binding OrderNotInSupply}" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
         <ListView.ItemsPanel>
 
             <ItemsPanelTemplate>
@@ -27,7 +27,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    
+                    <TextBlock VerticalAlignment="Center" Text="{Binding Supplier.Name}" TextAlignment="Center" 
+                                       TextWrapping="Wrap" HorizontalAlignment="Center"  FontSize="26" Grid.Row="0"/>
                 </Grid>
             </DataTemplate>
         </ListView.ItemTemplate>
