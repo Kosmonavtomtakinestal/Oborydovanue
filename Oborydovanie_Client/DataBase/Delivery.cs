@@ -22,7 +22,7 @@ namespace Oborydovanie_Client.DataBase
         }
     
         public int Id { get; set; }
-        public System.DateTime BeginDateTime { get; set; }
+        public Nullable<System.DateTime> BeginDateTime { get; set; }
         public int IdPointOfIssue { get; set; }
         public int IdDeliverier { get; set; }
     

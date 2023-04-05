@@ -16,13 +16,13 @@ namespace Oborydovanie_Client.DataBase
     {
         public int Id { get; set; }
         public System.DateTime Date { get; set; }
-        public decimal RentTime { get; set; }
-        public int IdStoreEmployee { get; set; }
+        public int RentTime { get; set; }
+        public Nullable<int> IdStoreEmployee { get; set; }
         public int IdClient { get; set; }
         public int IdStock { get; set; }
     
-        public virtual Client Client { get; set; }
         public virtual Stock Stock { get; set; }
         public virtual StoreEmployee StoreEmployee { get; set; }
+        public virtual Client Client { get; set; }
     }
 }

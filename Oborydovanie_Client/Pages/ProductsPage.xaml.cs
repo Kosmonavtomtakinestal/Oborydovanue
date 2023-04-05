@@ -27,6 +27,8 @@ namespace Oborydovanie_Client.Pages
         {
             InitializeComponent();
             ProductList.ItemsSource = Connection.db.Stock.ToList().Where(x => x.IdPoinOfIssue == SaveSomeData.point.Id);
+            List<string> sortList = new List<string>() { "по умолчанию" , "Цена ↑" , "Цена ↓" };
+            SortCB.ItemsSource = sortList;
         }
 
         private void AccountBTN_Click(object sender, RoutedEventArgs e)
@@ -41,21 +43,21 @@ namespace Oborydovanie_Client.Pages
 
         private void ToRentBTN_Click(object sender, RoutedEventArgs e)
         {
-            SaveSomeData.ProdToRent = (sender as Button).DataContext as Product;
+            SaveSomeData.stock = (sender as Button).DataContext as Stock;
+            MessageBox.Show(((sender as Button).DataContext as Stock).Product.Name);
             SaveSomeData.main.MainFrame.Navigate(new RentPage());
         }
         private void Refresh()
         {
             IEnumerable<Stock> filter = Connection.db.Stock.Where(x => x.IdPoinOfIssue == SaveSomeData.point.Id);
 
-            //if (ComboSort.SelectedIndex > 0)
-            //{
-            //    if (ComboSort.SelectedIndex == 1)
-            //        filter = filter.OrderBy(x => x.Name);
-            //    else if (ComboSort.SelectedIndex == 2)
-            //        filter = filter.OrderByDescending(x => x.Name);
-
-            //}
+            if (SortCB.SelectedIndex > 0)
+            {
+                if (SortCB.SelectedIndex == 1)
+                    filter = filter.OrderBy(x => x.Product.Price);
+                else if (SortCB.SelectedIndex == 2)
+                    filter = filter.OrderByDescending(x => x.Product.Price);
+            }
 
             if (SearchTB.Text.Length > 0)
             {
@@ -66,6 +68,16 @@ namespace Oborydovanie_Client.Pages
         }
 
         private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void MyRentsBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SortCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Refresh();
         }

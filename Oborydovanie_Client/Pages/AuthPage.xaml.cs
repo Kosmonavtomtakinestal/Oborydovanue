@@ -34,7 +34,7 @@ namespace Oborydovanie_Client.Pages
             }
             else
             {
-                SaveSomeData.client = Connection.db.Client.ToList().Find(x => x.Login == LoginTb.Text.Trim() || x.Password == PasswordTb.Text.Trim());
+                SaveSomeData.client = Connection.db.Client.ToList().Find(x => x.Login == LoginTb.Text.Trim() && x.Password == PasswordTb.Text.Trim());
                 if (SaveSomeData.client != null)
                 {
                     SaveSomeData.main.MainFrame.Navigate(new ChoosePointPage());
@@ -48,7 +48,7 @@ namespace Oborydovanie_Client.Pages
 
         private void RegBTN_Click(object sender, RoutedEventArgs e)
         {
-            SaveSomeData.main.MainFrame.Navigate(new RegPage());
+            SaveSomeData.main.MainFrame.Navigate(new MyDataPage(new Client(), 3));
         }
     }
 }
