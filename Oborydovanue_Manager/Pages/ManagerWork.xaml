@@ -4,15 +4,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Менеджер по закупке" Height="480" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Менеджер по закупке"  Background="#FF494949" Height="1080" Width="1920" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
-       
+
     </Window.Resources>
-    <Grid >
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="91*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="159*"/>
+            <RowDefinition Height="12*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -24,9 +26,54 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="4" Grid.Row="1" Style="{DynamicResource ButtonStyle}"/>
-        <Button Grid.Column="2" Grid.Row="1" Style="{DynamicResource ButtonStyle}"/>
-        <Button Grid.Column="7" Grid.Row="1" Style="{DynamicResource ButtonStyle}"/>
+
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="11" Background="#FFD9D9D9" Margin="0,0,-0.4,0"/>
+        <Button Grid.Row="1" x:Name="EngBtn"  Style="{DynamicResource ButtonStyleZalupa}" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Width="174" Click="EngBtn_Click"  >
+            <Button.Content>
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap" FontSize="24" Text="Заказы " HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap" FontSize="18"   Text=" инженеров" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Grid.Column="3" x:Name="MangBtn" Grid.Row="1" Style="{DynamicResource ButtonStyleZalupa}" Margin="0.4,0,0.2,0" Click="MangBtn_Click" >
+            <Button.Content>
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap" FontSize="24"  Text="Заказы " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  FontSize="18"  Text=" менеджера" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Grid.Column="5" Grid.Row="1" x:Name="DeliverBtn" Style="{DynamicResource ButtonStyleZalupa}" Margin="0.4,0,0.2,0" Click="DeliverBtn_Click">
+            <Button.Content>
+                <StackPanel>
+                    <TextBlock  Text="Поставщики " FontSize="18"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Grid.Column="7" Grid.Row="1" x:Name="HistoryBtn" Style="{DynamicResource ButtonStyleZalupa}" Margin="0.4,0,0.2,0" Click="HistoryBtn_Click">
+            <Button.Content>
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap" Text="История " FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"   Text="Заказов" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
+
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Grid.Column="9" Grid.Row="1" x:Name="ProfileBtn" Style="{DynamicResource ButtonStyleZalupa}" Margin="0.2,0" Click="ProfileBtn_Click">
+            <Button.Content>
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap" Text="Личный " HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"   Text=" профиль" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center"/>
+
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="9"  />
     </Grid>
 </Window>

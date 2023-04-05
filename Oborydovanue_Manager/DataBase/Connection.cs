@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Oborydovanue_Deliverier.DataBase
 {
-    internal class Connection
+    public static class Connection
     {
         public static ArendaEntities db = new ArendaEntities();
     }
