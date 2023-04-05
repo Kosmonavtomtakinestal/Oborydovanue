@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Oborydovanie_Client.Pages"
+      xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MyDataPage">
@@ -49,28 +50,31 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Row="1" Grid.Column="1" Text="Логин"></TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Login}" IsEnabled="False" x:Name="LoginTb"></TextBox>
+                <TextBox VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Text="{Binding Login}" IsEnabled="False" x:Name="LoginTb" MaxLength="20" TextChanged="EngSumb_TextChanged"></TextBox>
 
                 <TextBlock Grid.Row="4" Grid.Column="1" Text="Пароль"></TextBlock>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Password}" x:Name="PasswordTb"></TextBox>
+                <TextBox VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" Text="{Binding Password}" x:Name="PasswordTb" MaxLength="20" TextChanged="EngSumb_TextChanged"></TextBox>
 
                 <TextBlock Grid.Row="7" Grid.Column="1" Text="Повтор пароля"></TextBlock>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Password}" x:Name="ReturnPasswordTb"></TextBox>
+                <TextBox VerticalAlignment="Center" Grid.Row="8" Grid.Column="1" x:Name="ReturnPasswordTb" MaxLength="20"></TextBox>
 
                 <TextBlock Grid.Row="10" Grid.Column="3" Text="Телефон"></TextBlock>
-                <TextBox Grid.Row="11" Grid.Column="3" Text="{Binding Phone}" x:Name="PhoneTb"></TextBox>
+                <toolkit:MaskedTextBox VerticalAlignment="Center" Grid.Row="11" Grid.Column="3" Text="{Binding Phone}" 
+                                       Mask="+7 (000) 000 00-00"
+                                       x:Name="PhoneTb"></toolkit:MaskedTextBox>
 
                 <TextBlock Grid.Row="10" Grid.Column="1" Text="Серия и номер пасспорта"></TextBlock>
-                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Passport}" x:Name="PassportTb"></TextBox>
+                <toolkit:MaskedTextBox VerticalAlignment="Center" Grid.Row="11" Grid.Column="1" Text="{Binding Passport}" x:Name="PassportTb" MaxLength="10" 
+                         Mask="0000-000000"></toolkit:MaskedTextBox>
 
                 <TextBlock Grid.Row="1" Grid.Column="3" Text="Фамилия"></TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Surname}" x:Name="SurnameTb"></TextBox>
+                <TextBox VerticalAlignment="Center" Grid.Row="2" Grid.Column="3" Text="{Binding Surname}" x:Name="SurnameTb" KeyDown="RusSumb_KeyDown"></TextBox>
 
                 <TextBlock Grid.Row="4" Grid.Column="3" Text="Имя"></TextBlock>
-                <TextBox Grid.Row="5" Grid.Column="3" Text="{Binding Name}" x:Name="NameTb"></TextBox>
+                <TextBox VerticalAlignment="Center" Grid.Row="5" Grid.Column="3" Text="{Binding Name}" x:Name="NameTb" KeyDown="RusSumb_KeyDown"></TextBox>
                 
                 <TextBlock Grid.Row="7" Grid.Column="3" Text="Фамилия"></TextBlock>
-                <TextBox Grid.Row="8" Grid.Column="3" Text="{Binding Patronymic}" x:Name="PatronymicTb"></TextBox>
+                <TextBox VerticalAlignment="Center" Grid.Row="8" Grid.Column="3" Text="{Binding Patronymic}" x:Name="PatronymicTb" KeyDown="RusSumb_KeyDown"></TextBox>
 
                 <Button x:Name="BackBTN" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" Content="Назад" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="13" Click="BackBTN_Click">
                     <Button.Style>

@@ -39,7 +39,7 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox x:Name="LoginTb" Foreground="Black" Height="NaN" FontWeight="Bold" FontSize="22" Width="NaN" Background="White" Grid.Column="1" Grid.Row="1"/>
+                <TextBox VerticalAlignment="Center" x:Name="LoginTb" Foreground="Black" Height="NaN" FontWeight="Bold" FontSize="22" Width="NaN" Background="White" Grid.Column="1" Grid.Row="1"/>
                 <TextBlock IsHitTestVisible="False" FontSize="18" Text="Логин" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" Grid.Column="1" Grid.Row="1" Width="NaN">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
@@ -53,7 +53,7 @@
                     </TextBlock.Style>
                 </TextBlock>
 
-                <TextBox x:Name="PasswordTb" Foreground="Black" Height="NaN" FontSize="22" Width="NaN" FontWeight="Bold" Background="White" Grid.Column="1" Grid.Row="3" />
+                <TextBox VerticalAlignment="Center" x:Name="PasswordTb" Foreground="Black" Height="NaN" FontSize="22" Width="NaN" FontWeight="Bold" Background="White" Grid.Column="1" Grid.Row="3" />
                 <TextBlock IsHitTestVisible="False" FontSize="18" Text="Пароль" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Height="NaN" Foreground="Black" Grid.Column="1" Grid.Row="3" Width="NaN">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">

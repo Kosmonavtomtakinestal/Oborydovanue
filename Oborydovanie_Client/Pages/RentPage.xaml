@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Oborydovanie_Client.Pages"
+      xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RentPage">
@@ -21,60 +22,12 @@
                     Height="60"
                     Width="60"
                     Margin="20 10 0 0">
-                <Button x:Name="AccountBTN" Click="AccountBTN_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Button x:Name="BackBTN" Click="BackBTN_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
                     <Image Source="/Resources/accaunt.png"/>
                 </Button>
             </Border>
 
         </Grid>
-
-        <Grid Grid.Row="0" HorizontalAlignment="Left">
-
-            <Border CornerRadius="40"
-                    Background="#FFD9D9D9"
-                    Height="60"
-                    Width="60"
-                    Margin="100 10 0 0">
-                <Button x:Name="PointBTN" Click="PointBTN_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
-                    <Image Source="/Resources/point.png" />
-
-                </Button>
-            </Border>
-
-        </Grid>
-
-        <Border Grid.Row="1" 
-                Background="#FFD9D9D9" 
-                Margin="20"
-                CornerRadius="10"
-                x:Name="CalMenu"
-                Visibility="Collapsed">
-
-            <Grid>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-
-                <Calendar Grid.Column="1" x:Name="StartCal"/>
-
-                <TextBlock Grid.Column="1" Text="Дата начала" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                
-                <Calendar Grid.Column="3" x:Name="EndCal"/>
-
-                <TextBlock Grid.Column="3" Text="Дата конца" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-
-                <Button x:Name="SetTime" VerticalAlignment="Bottom" Grid.Column="1" Grid.ColumnSpan="3" Content="Выбрать" Width="70" Margin="10" Click="SetTime_Click"/>
-
-                <TextBlock x:Name="Sum" VerticalAlignment="Bottom" Grid.Column="1" Grid.ColumnSpan="3" Margin="40" Width="70"/>
-
-            </Grid>
-            
-        </Border>
 
         <Border Grid.Row="1" 
                 Background="#FFD9D9D9" 
@@ -98,35 +51,64 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal">
+                <StackPanel x:Name="SelTime" Grid.RowSpan="5" Grid.ColumnSpan="3" Visibility="Collapsed">
 
-                    <TextBlock Text="Прокат: " FontSize="20" VerticalAlignment="Center"/>
-
-                    <RadioButton x:Name="HourRent" Content="По часам" VerticalAlignment="Center" FontSize="20" Margin="10 0 10 0"/>
-
-                    <RadioButton x:Name="DayRent" Content="По дням" VerticalAlignment="Center" FontSize="20" Margin="10 0 10 0"/>
+                    <Calendar x:Name="StartTimeCalendar" SelectionMode="SingleDate" 
+                              SelectedDatesChanged="StartTimeCalendar_SelectedDatesChanged" 
+                              VerticalAlignment="Center"/>
 
                 </StackPanel>
 
-                <StackPanel x:Name="HourSP" Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Visibility="Collapsed">
+                <StackPanel x:Name="OneSP" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal">
 
-                    <TextBlock Text="Количетсво часов " FontSize="20"/>
-
-                    <TextBox x:Name="CountHourTB" Width="30"/>
+                    <TextBlock Text="Прокат " FontSize="20" VerticalAlignment="Center"/>
 
                 </StackPanel>
 
-                <StackPanel x:Name="DaySP" Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
+                <StackPanel x:Name="TwoSP" Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
 
                     <TextBlock Text="Дата начала " FontSize="20"/>
 
-                    <TextBox x:Name="TimeStart" Width="100" Margin="5 0 5 0" TextChanged="TimeStart_TextChanged"></TextBox>
+                    <TextBox x:Name="TimeStart" Width="100" Margin="5 0 5 0" MouseDown="TimeStart_MouseDown"></TextBox>
 
-                    <TextBlock Text="Дата окончания " FontSize="20"/>
+                    <TextBlock Text="Количество дней " FontSize="20"/>
 
-                    <TextBox x:Name="TimeEnd"  Width="100" Margin="5 0 5 0" TextChanged="TimeStart_TextChanged"></TextBox>
+                    <TextBox x:Name="CountDay"  Width="100" Margin="5 0 5 0" TextChanged="CountDay_TextChanged" PreviewTextInput="CountDay_PreviewTextInput"></TextBox>
                     
                 </StackPanel>
+
+                <StackPanel x:Name="ThreeSP" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal">
+
+                    <TextBlock Text="Стоимость: " FontSize="20"/>
+                    
+                    <TextBlock x:Name="CostTB" FontSize="20"/>
+
+                </StackPanel>
+
+                <Button Grid.Row="3" Grid.Column="1" x:Name="ToRentBTN" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" Content="Оставить заявку" RenderTransformOrigin="0.5,0.5" Height="NaN" Click="ToRentBTN_Click">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="Borderpox" CornerRadius="14" >
+                                            <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="White"/>
+                                                <Setter Property="Background" TargetName="Borderpox" Value="#FF494949"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                    
+                </Button>
+
+                
                 
             </Grid>
             
