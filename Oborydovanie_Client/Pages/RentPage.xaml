@@ -22,10 +22,32 @@
                     Height="60"
                     Width="60"
                     Margin="20 10 0 0">
-                <Button x:Name="BackBTN" Click="BackBTN_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
-                    <Image Source="/Resources/accaunt.png"/>
+                <Button x:Name="BackBTN" Click="BackBTN_Click" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="Borderpox" CornerRadius="40" >
+                                            <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="White"/>
+                                                <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                    <Button.Content>
+                        <Image Source="/Resources/back.png" MaxHeight="45" MaxWidth="45"/>
+                    </Button.Content>
                 </Button>
             </Border>
+
 
         </Grid>
 
@@ -51,7 +73,7 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
 
-                <StackPanel x:Name="SelTime" Grid.RowSpan="5" Grid.ColumnSpan="3" Visibility="Collapsed">
+                <StackPanel x:Name="SelTime" Grid.RowSpan="6" Grid.ColumnSpan="3" Visibility="Collapsed" Panel.ZIndex="2" Background="#4C494949">
 
                     <Calendar x:Name="StartTimeCalendar" SelectionMode="SingleDate" 
                               SelectedDatesChanged="StartTimeCalendar_SelectedDatesChanged" 
@@ -61,7 +83,9 @@
 
                 <StackPanel x:Name="OneSP" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal">
 
-                    <TextBlock Text="Прокат " FontSize="20" VerticalAlignment="Center"/>
+                    <TextBlock Text="Прокат товара: " FontSize="20" VerticalAlignment="Center"/>
+                    
+                    <TextBlock x:Name="ProductTB" FontSize="20" VerticalAlignment="Center"/>
 
                 </StackPanel>
 
@@ -69,11 +93,12 @@
 
                     <TextBlock Text="Дата начала " FontSize="20"/>
 
-                    <TextBox x:Name="TimeStart" Width="100" Margin="5 0 5 0" MouseDown="TimeStart_MouseDown"></TextBox>
+                    <Button x:Name="SelDateBTN" Width="100" Margin="5 0 5 0" Content="Выбрать" Click="SelDateBTN_Click"/>
+                    <TextBox x:Name="TimeStart" Width="100" Margin="5 0 5 0" FontSize="16" IsEnabled="False"></TextBox>
 
                     <TextBlock Text="Количество дней " FontSize="20"/>
 
-                    <TextBox x:Name="CountDay"  Width="100" Margin="5 0 5 0" TextChanged="CountDay_TextChanged" PreviewTextInput="CountDay_PreviewTextInput"></TextBox>
+                    <TextBox x:Name="CountDay"  Width="100" Margin="5 0 5 0" MaxLength="2" FontSize="16" TextChanged="CountDay_TextChanged" PreviewTextInput="CountDay_PreviewTextInput"></TextBox>
                     
                 </StackPanel>
 

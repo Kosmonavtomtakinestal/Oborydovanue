@@ -28,6 +28,11 @@ namespace Oborydovanie_Client.Pages
 
         private void AuthBTN_Click(object sender, RoutedEventArgs e)
         {
+            Auth();
+        }
+
+        private void Auth()
+        {
             if (LoginTb.Text.Trim() == "" || PasswordTb.Text.Trim() == "")
             {
                 MessageBox.Show("Заполните все поля", "Уведомления", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -49,6 +54,12 @@ namespace Oborydovanie_Client.Pages
         private void RegBTN_Click(object sender, RoutedEventArgs e)
         {
             SaveSomeData.main.MainFrame.Navigate(new MyDataPage(new Client(), 3));
+        }
+
+        private void Page_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                Auth();
         }
     }
 }

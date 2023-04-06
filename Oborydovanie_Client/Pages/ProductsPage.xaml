@@ -22,8 +22,29 @@
                     Background="#FFD9D9D9"
                     Height="60"
                     Width="60">
-                    <Button x:Name="AccountBTN" Click="AccountBTN_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
-                        <Image Source="/Resources/accaunt.png"/>
+                    <Button x:Name="AccountBTN" Click="AccountBTN_Click" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="Borderpox" CornerRadius="40" >
+                                                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                        <Button.Content>
+                            <Image Source="/Resources/accaunt.png" MaxHeight="45" MaxWidth="45"/>
+                        </Button.Content>
                     </Button>
                 </Border>
 
@@ -32,9 +53,29 @@
                     Height="60"
                     Width="60" 
                     Margin="10 0 0 0">
-                    <Button x:Name="PointBTN" Click="PointBTN_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
-                        <Image Source="/Resources/point.png" />
-
+                    <Button x:Name="PointBTN" Click="PointBTN_Click" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="Borderpox" CornerRadius="40" >
+                                                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                        <Button.Content>
+                            <Image Source="/Resources/point.png" MaxHeight="45" MaxWidth="45"/>
+                        </Button.Content>
                     </Button>
                 </Border>
 
@@ -43,26 +84,48 @@
                     Height="60"
                     Width="80"
                     Margin="10 0 0 0">
-                    <Button x:Name="MyRentsBTN" Click="MyRentsBTN_Click" Content="Мои заявки" Background="{x:Null}" BorderBrush="{x:Null}" />
+                    
+                    <Button x:Name="MyRentsBTN" Click="MyRentsBTN_Click" FontSize="10" Content="Мои заявки" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="Borderpox" CornerRadius="15" >
+                                                <StackPanel>
+                                                    <Image Source="/Resources/rent.png" MaxHeight="40"/>
+                                                    <!--<ContentPresenter Content="{TemplateBinding Content}" />-->
+                                                    <TextBlock HorizontalAlignment="Center" Text="Мои заявки"/>
+                                                </StackPanel>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
                 </Border>
-
             </StackPanel>
 
 
         </Grid>
 
-        <Grid Grid.Row="0" HorizontalAlignment="Right" Margin="0 10 40 0">
+        <Grid Grid.Row="0" HorizontalAlignment="Right" Margin="0 10 40 0" Width="500">
 
-            <StackPanel Orientation="Horizontal">
-
-                <TextBox Height="30" 
+            <TextBox Height="30" 
                          Width="300" 
                          Margin="10 0 10 0"
                          x:Name="SearchTB" 
                          TextChanged="SearchTB_TextChanged" 
                          FontSize="20"
-                         VerticalAlignment="Center"/>
-                <TextBlock IsHitTestVisible="False" FontSize="18" Text="Логин" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" Width="NaN">
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left"/>
+                <TextBlock Margin="20 0 0 0" IsHitTestVisible="False" FontSize="14" Text="Поиск" Height="NaN" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" Width="NaN">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="Visibility" Value="Collapsed"/>
@@ -75,15 +138,30 @@
                     </TextBlock.Style>
                 </TextBlock>
 
-                <ComboBox Height="30"
-                          Width="110"
+
+            <ComboBox Height="30"
+                          Width="140"
                           Margin="10 0 10 0"
                           x:Name="SortCB"
-                          VerticalAlignment="Center" SelectionChanged="SortCB_SelectionChanged">
-                </ComboBox>
+                          VerticalAlignment="Center" 
+                      FontSize="14"
+                      FontWeight="Bold"
+                      SelectionChanged="SortCB_SelectionChanged"
+                      HorizontalAlignment="Right">
+            </ComboBox>
+            <TextBlock Margin="20 0 30 0" IsHitTestVisible="False" FontSize="14" Text="Сотрировка" Height="NaN" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" Width="NaN">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=SortCB}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
 
-            </StackPanel>
-            
         </Grid>
 
         <Border Grid.Row="1" 
