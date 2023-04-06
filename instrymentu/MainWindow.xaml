@@ -59,7 +59,7 @@
             </TextBlock.Style>
         </TextBlock>
 
-        <Button x:Name="AccountBTN" Click="AccountBTN_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button x:Name="AccountBTN" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Image Source="accaunt.png"/>
         </Button>
 

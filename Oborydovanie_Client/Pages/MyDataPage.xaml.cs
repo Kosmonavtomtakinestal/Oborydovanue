@@ -90,9 +90,43 @@ namespace Oborydovanie_Client.Pages
 
         private void EngSumb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(LoginTb.Text, "^[a-zA-Z]"))
+            TextBox textBox = (TextBox)sender;
+            string input = textBox.Text;
+
+            // Паттерн для проверки латинских символов
+            Regex regex = new Regex("^[a-zA-Z0-9]*$");
+
+            // Если не прошло проверку, то удаляем последний символ из текстбокса
+            if (!regex.IsMatch(input))
             {
-                LoginTb.Text.Remove(LoginTb.Text.Length - 1);
+                int caretPosition = textBox.SelectionStart - 1;
+                if (caretPosition >= 0)
+                {
+                    textBox.Text = textBox.Text.Remove(caretPosition, 1);
+                    textBox.SelectionStart = caretPosition;
+                    textBox.SelectionLength = 0;
+                }
+            }
+        }
+
+        private void RusSumb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            string input = textBox.Text;
+
+            // Паттерн для проверки латинских символов
+            Regex regex = new Regex("^[а-яА-Я]*$");
+
+            // Если не прошло проверку, то удаляем последний символ из текстбокса
+            if (!regex.IsMatch(input))
+            {
+                int caretPosition = textBox.SelectionStart - 1;
+                if (caretPosition >= 0)
+                {
+                    textBox.Text = textBox.Text.Remove(caretPosition, 1);
+                    textBox.SelectionStart = caretPosition;
+                    textBox.SelectionLength = 0;
+                }
             }
         }
     }

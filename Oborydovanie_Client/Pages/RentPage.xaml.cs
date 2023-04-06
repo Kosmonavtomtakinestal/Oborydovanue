@@ -24,6 +24,8 @@ namespace Oborydovanie_Client.Pages
         public RentPage()
         {
             InitializeComponent();
+            ProductTB.Text = SaveSomeData.stock.Product.Name;
+            TimeStart.Text = DateTime.Now.ToShortDateString();
         }
 
         private void ToRentBTN_Click(object sender, RoutedEventArgs e)
@@ -32,7 +34,7 @@ namespace Oborydovanie_Client.Pages
             {
                 MessageBox.Show("Заполните все поля", "Уыедомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else if (StartTimeCalendar.SelectedDate <= DateTime.Now)
+            else if (StartTimeCalendar.SelectedDate < DateTime.Now.Date)
             {
                 StartTimeCalendar.SelectedDate = null;
                 MessageBox.Show("Выберите правильную дату", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -60,6 +62,7 @@ namespace Oborydovanie_Client.Pages
                 {
                     Connection.db.Rent.Add(rent);
                     Connection.db.SaveChanges();
+                    MessageBox.Show($"Заявка успешно оформлена\nПриходите в точку выдачи по адресу {SaveSomeData.point.Addres}", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception)
                 {
@@ -67,7 +70,6 @@ namespace Oborydovanie_Client.Pages
                     return;
                     throw;
                 }
-                MessageBox.Show($"Заявка успешно оформлена\nПриходите в точку выдачи по адресу {SaveSomeData.point.Addres}", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 SaveSomeData.main.MainFrame.Navigate(new ProductsPage());
 
@@ -79,43 +81,23 @@ namespace Oborydovanie_Client.Pages
             SaveSomeData.main.MainFrame.Navigate(new ProductsPage());
         }
 
-        private void ReadyDateBTN_MouseLeave(object sender, MouseEventArgs e)
-        {
-            
-        }
-
-        private void TimeStart_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            SelTime.Visibility = Visibility.Visible;
-            OneSP.Visibility = Visibility.Collapsed;
-            TwoSP.Visibility = Visibility.Collapsed;
-            ThreeSP.Visibility = Visibility.Collapsed;
-            ToRentBTN.Visibility = Visibility.Collapsed;
-        }
-
         private void StartTimeCalendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
             if (StartTimeCalendar.SelectedDate == null)
             {
                 MessageBox.Show("Выберите дату", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else if (StartTimeCalendar.SelectedDate <= DateTime.Now)
-            {
-                StartTimeCalendar.SelectedDate = null;
+            else if (StartTimeCalendar.SelectedDate < DateTime.Now.Date)
+            { 
                 MessageBox.Show("Выберите правильную дату", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else if (StartTimeCalendar.SelectedDate.Value.DayOfWeek == DayOfWeek.Sunday)
             {
-                StartTimeCalendar.SelectedDate = null;
                 MessageBox.Show("Воскресение - выходной", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
                 SelTime.Visibility = Visibility.Collapsed;
-                OneSP.Visibility = Visibility.Visible;
-                TwoSP.Visibility = Visibility.Visible;
-                ThreeSP.Visibility = Visibility.Visible;
-                ToRentBTN.Visibility = Visibility.Visible;
                 TimeStart.Text = StartTimeCalendar.SelectedDate.Value.ToShortDateString();
             }
         }
@@ -130,10 +112,19 @@ namespace Oborydovanie_Client.Pages
 
         private void CountDay_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            if (!(Char.IsDigit(e.Text, 0)))
+            if (!int.TryParse(e.Text, out int daysCount) || daysCount == 0)
+                e.Handled = true;
+
+
+            /*if (!(Char.IsDigit(e.Text, 0)))
             {
                 e.Handled = true;
-            }
+            }*/
+        }
+
+        private void SelDateBTN_Click(object sender, RoutedEventArgs e)
+        {
+            SelTime.Visibility = Visibility.Visible;
         }
     }
 }

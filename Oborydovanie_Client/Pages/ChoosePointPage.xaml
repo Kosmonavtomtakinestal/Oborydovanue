@@ -21,8 +21,29 @@
                     Height="60"
                     Width="60"
                     Margin="20 10 0 0">
-                <Button x:Name="AccountBTN" Click="AccountBTN_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
-                    <Image Source="/Resources/accaunt.png"/>
+                <Button x:Name="AccountBTN" Click="AccountBTN_Click" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="Borderpox" CornerRadius="40" >
+                                            <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="White"/>
+                                                <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                    <Button.Content>
+                        <Image Source="/Resources/accaunt.png" MaxHeight="45" MaxWidth="45"/>
+                    </Button.Content>
                 </Button>
             </Border>
 
