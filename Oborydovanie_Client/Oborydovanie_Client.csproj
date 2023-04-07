@@ -136,6 +136,7 @@
     <Compile Include="DataBase\OrganizationEmployee.cs">
       <DependentUpon>ModelOborudovanie.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\PartialClass\Rent.cs" />
     <Compile Include="DataBase\PointOfIssue.cs">
       <DependentUpon>ModelOborudovanie.tt</DependentUpon>
     </Compile>
@@ -179,6 +180,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\MyRents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ProductsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -205,6 +210,9 @@
     </Compile>
     <Compile Include="Pages\MyDataPage.xaml.cs">
       <DependentUpon>MyDataPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MyRents.xaml.cs">
+      <DependentUpon>MyRents.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProductsPage.xaml.cs">
       <DependentUpon>ProductsPage.xaml</DependentUpon>

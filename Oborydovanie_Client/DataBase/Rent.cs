@@ -20,9 +20,10 @@ namespace Oborydovanie_Client.DataBase
         public Nullable<int> IdStoreEmployee { get; set; }
         public int IdClient { get; set; }
         public int IdStock { get; set; }
+        public Nullable<bool> Returned { get; set; }
     
+        public virtual Client Client { get; set; }
         public virtual Stock Stock { get; set; }
         public virtual StoreEmployee StoreEmployee { get; set; }
-        public virtual Client Client { get; set; }
     }
 }

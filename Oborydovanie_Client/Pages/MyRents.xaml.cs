@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Oborydovanie_Client.DataBase;
 
 namespace Oborydovanie_Client.Pages
 {
@@ -23,6 +24,7 @@ namespace Oborydovanie_Client.Pages
         public MyRents()
         {
             InitializeComponent();
+            RentList.ItemsSource = Connection.db.Rent.Where(x => x.IdClient == SaveSomeData.client.Id).ToList();
         }
     }
 }
