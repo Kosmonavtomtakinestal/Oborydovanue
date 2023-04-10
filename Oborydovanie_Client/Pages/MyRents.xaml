@@ -85,7 +85,7 @@
                     Width="80"
                     Margin="10 0 0 0">
 
-                    <Button x:Name="ProductBTN" Click="ProductBTN_Click" FontSize="10" Content="Товары" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                    <Button x:Name="ProductBTN" Click="ProductBTN_Click" FontSize="10" Content="Все товары" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="Template">
@@ -95,7 +95,7 @@
                                                 <StackPanel>
                                                     <Image Source="/Resources/rent.png" MaxHeight="40"/>
                                                     <!--<ContentPresenter Content="{TemplateBinding Content}" />-->
-                                                    <TextBlock HorizontalAlignment="Center" Text="Мои заявки"/>
+                                                    <TextBlock HorizontalAlignment="Center" Text="Все товары"/>
                                                 </StackPanel>
                                             </Border>
                                             <ControlTemplate.Triggers>
