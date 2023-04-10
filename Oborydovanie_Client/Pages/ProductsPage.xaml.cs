@@ -73,7 +73,7 @@ namespace Oborydovanie_Client.Pages
 
         private void MyRentsBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            SaveSomeData.main.MainFrame.Navigate(new MyRents());
         }
 
         private void SortCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
