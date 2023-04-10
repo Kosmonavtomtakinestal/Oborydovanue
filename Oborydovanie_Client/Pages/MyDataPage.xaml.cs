@@ -48,6 +48,10 @@ namespace Oborydovanie_Client.Pages
             {
                 SaveSomeData.main.MainFrame.Navigate(new AuthPage());
             }
+            else if (i == 4)
+            {
+                SaveSomeData.main.MainFrame.Navigate(new MyRents());
+            }
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)

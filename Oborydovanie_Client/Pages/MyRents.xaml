@@ -22,7 +22,7 @@
                     Background="#FFD9D9D9"
                     Height="60"
                     Width="60">
-                    <Button x:Name="AccountBTN" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                    <Button x:Name="AccountBTN" Click="AccountBTN_Click" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="Template">
@@ -53,7 +53,7 @@
                     Height="60"
                     Width="60" 
                     Margin="10 0 0 0">
-                    <Button x:Name="PointBTN" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                    <Button x:Name="PointBTN" Click="PointBTN_Click" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="Template">
@@ -85,7 +85,7 @@
                     Width="80"
                     Margin="10 0 0 0">
 
-                    <Button x:Name="MyRentsBTN" FontSize="10" Content="Мои заявки" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                    <Button x:Name="ProductBTN" Click="ProductBTN_Click" FontSize="10" Content="Товары" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="Template">
@@ -112,54 +112,6 @@
                 </Border>
             </StackPanel>
 
-
-        </Grid>
-
-        <Grid Grid.Row="0" HorizontalAlignment="Right" Margin="0 10 40 0" Width="500">
-
-            <TextBox Height="30" 
-                         Width="300" 
-                         Margin="10 0 10 0"
-                         x:Name="SearchTB"  
-                         FontSize="20"
-                         VerticalAlignment="Center"
-                         HorizontalAlignment="Left"/>
-            <TextBlock Margin="20 0 0 0" IsHitTestVisible="False" FontSize="14" Text="Поиск" Height="NaN" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" Width="NaN">
-                <TextBlock.Style>
-                    <Style TargetType="{x:Type TextBlock}">
-                        <Setter Property="Visibility" Value="Collapsed"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Text, ElementName=SearchTB}" Value="">
-                                <Setter Property="Visibility" Value="Visible"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBlock.Style>
-            </TextBlock>
-
-
-            <ComboBox Height="30"
-                          Width="140"
-                          Margin="10 0 10 0"
-                          x:Name="SortCB"
-                          VerticalAlignment="Center" 
-                      FontSize="14"
-                      FontWeight="Bold"
-                      HorizontalAlignment="Right">
-            </ComboBox>
-            <TextBlock Margin="20 0 30 0" IsHitTestVisible="False" FontSize="14" Text="Сотрировка" Height="NaN" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" Width="NaN">
-                <TextBlock.Style>
-                    <Style TargetType="{x:Type TextBlock}">
-                        <Setter Property="Visibility" Value="Collapsed"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Text, ElementName=SortCB}" Value="">
-                                <Setter Property="Visibility" Value="Visible"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBlock.Style>
-            </TextBlock>
-
         </Grid>
 
         <Border Grid.Row="1" 
@@ -180,13 +132,13 @@
                                 <ColumnDefinition MinWidth="130"/>
                                 <ColumnDefinition MinWidth="100"/>
                                 <ColumnDefinition MinWidth="100"/>
-                                <ColumnDefinition MinWidth="100"/>
-                                <ColumnDefinition MinWidth="100"/>
+                                <ColumnDefinition MinWidth="120"/>
+                                <ColumnDefinition MinWidth="120"/>
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Column="0">
 
-                                <TextBlock Text="Дата начала"/>
+                                <TextBlock Text="Дата начала" Margin="5 0 0 0"/>
                                 
                                 <TextBlock Text="{Binding Date, StringFormat=dd.MM.yy}"
                                            HorizontalAlignment="Center"/>

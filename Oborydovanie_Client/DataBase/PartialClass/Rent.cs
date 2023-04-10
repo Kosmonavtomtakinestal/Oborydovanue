@@ -14,15 +14,15 @@ namespace Oborydovanie_Client.DataBase
             {
                 if ((bool)Returned)
                 {
-                    return "";
+                    return "Товар возвращен";
                 }
-                else if ()
+                else if (!(bool)Returned && IdStoreEmployee != null)
                 {
-                    return "";
+                    return "Товар в прокате";
                 }
                 else
                 {
-                    return "";
+                    return "Готовится к прокату";
                 }
             }
         }
