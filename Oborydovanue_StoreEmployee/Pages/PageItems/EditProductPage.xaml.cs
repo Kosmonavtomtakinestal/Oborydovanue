@@ -12,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Oborydovanue_StoreEmployee.Pages;
 
-namespace Oborydovanue_StoreEmployee
+namespace Oborydovanue_StoreEmployee.Pages.PageItems
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для EditProductPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EditProductPage : Page
     {
-        public MainWindow()
+        public EditProductPage()
         {
             InitializeComponent();
-            SaveSomeData.main = this;
-            MainFrame.Navigate(new AuthPage());
         }
     }
 }
