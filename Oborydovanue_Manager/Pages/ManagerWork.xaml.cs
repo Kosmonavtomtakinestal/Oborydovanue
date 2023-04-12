@@ -22,6 +22,36 @@ namespace Oborydovanue_Manager.Pages
         public ManagerWork()
         {
             InitializeComponent();
+            
+
+            MainFrame.Navigate(new PageEng());
+        }
+
+        
+
+        private void DeliverBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void EngBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new PageEng());
+        }
+
+        private void MangBtn_Click(object sender, RoutedEventArgs e)
+        {
+        MainFrame.Navigate(new PageManager());
+        }
+
+        private void HistoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ProfileBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
