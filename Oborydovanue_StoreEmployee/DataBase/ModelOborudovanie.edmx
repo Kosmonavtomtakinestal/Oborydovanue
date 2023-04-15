@@ -53,17 +53,17 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BeginDateTime" Type="datetime" />
-          <Property Name="IdPointOfIssue" Type="int" Nullable="false" />
-          <Property Name="IdDeliverier" Type="int" Nullable="false" />
+          <Property Name="IdPointOfIssue" Type="int" />
+          <Property Name="IdDeliverier" Type="int" />
         </EntityType>
         <EntityType Name="DeliveryProducts">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdDelivery" Type="int" Nullable="false" />
-          <Property Name="IdStock" Type="int" Nullable="false" />
-          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="IdDelivery" Type="int" />
+          <Property Name="IdStock" Type="int" />
+          <Property Name="Count" Type="int" />
         </EntityType>
         <EntityType Name="Engineer">
           <Key>
@@ -248,7 +248,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_Deliverier">
-          <End Role="Deliverier" Type="Self.Deliverier" Multiplicity="1" />
+          <End Role="Deliverier" Type="Self.Deliverier" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Deliverier">
@@ -260,7 +260,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_PointOfIssue">
-          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="1" />
+          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PointOfIssue">
@@ -272,7 +272,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DeliveryProducts_Delivery">
-          <End Role="Delivery" Type="Self.Delivery" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="0..1" />
           <End Role="DeliveryProducts" Type="Self.DeliveryProducts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Delivery">
@@ -284,7 +284,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DeliveryProducts_Stock">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
           <End Role="DeliveryProducts" Type="Self.DeliveryProducts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
@@ -600,8 +600,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="BeginDateTime" Type="DateTime" Precision="3" />
-          <Property Name="IdPointOfIssue" Type="Int32" Nullable="false" />
-          <Property Name="IdDeliverier" Type="Int32" Nullable="false" />
+          <Property Name="IdPointOfIssue" Type="Int32" />
+          <Property Name="IdDeliverier" Type="Int32" />
           <NavigationProperty Name="Delivered" Relationship="Self.FK_Delivered_Delivery" FromRole="Delivery" ToRole="Delivered" />
           <NavigationProperty Name="Deliverier" Relationship="Self.FK_Delivery_Deliverier" FromRole="Delivery" ToRole="Deliverier" />
           <NavigationProperty Name="PointOfIssue" Relationship="Self.FK_Delivery_PointOfIssue" FromRole="Delivery" ToRole="PointOfIssue" />
@@ -612,9 +612,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdDelivery" Type="Int32" Nullable="false" />
-          <Property Name="IdStock" Type="Int32" Nullable="false" />
-          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="IdDelivery" Type="Int32" />
+          <Property Name="IdStock" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
           <NavigationProperty Name="Delivery" Relationship="Self.FK_DeliveryProducts_Delivery" FromRole="DeliveryProducts" ToRole="Delivery" />
           <NavigationProperty Name="Stock" Relationship="Self.FK_DeliveryProducts_Stock" FromRole="DeliveryProducts" ToRole="Stock" />
         </EntityType>
@@ -841,7 +841,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_Deliverier">
-          <End Role="Deliverier" Type="Self.Deliverier" Multiplicity="1" />
+          <End Role="Deliverier" Type="Self.Deliverier" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Deliverier">
@@ -853,7 +853,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_PointOfIssue">
-          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="1" />
+          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PointOfIssue">
@@ -865,7 +865,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DeliveryProducts_Delivery">
-          <End Role="Delivery" Type="Self.Delivery" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="0..1" />
           <End Role="DeliveryProducts" Type="Self.DeliveryProducts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Delivery">
@@ -877,7 +877,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DeliveryProducts_Stock">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
           <End Role="DeliveryProducts" Type="Self.DeliveryProducts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">

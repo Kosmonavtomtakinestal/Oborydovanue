@@ -18,22 +18,28 @@
 
             <StackPanel Orientation="Horizontal" Margin="20 10 0 0">
 
-                <Border CornerRadius="40"
+                <Border CornerRadius="15"
                     Background="#FFD9D9D9"
                     Height="60"
-                    Width="60">
-                    <Button x:Name="AccountBTN" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                    Width="80"
+                    Margin="10 0 0 0">
+
+                    <Button x:Name="OurDelBTN" Click="OurDelBTN_Click" FontSize="10" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Row="6" Height="NaN">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="Button">
-                                            <Border x:Name="Borderpox" CornerRadius="40" >
-                                                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            <Border x:Name="Borderpox" CornerRadius="15" >
+                                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                    <!--<ContentPresenter Content="{TemplateBinding Content}" />-->
+                                                    <TextBlock  Text="Доаставка" HorizontalAlignment="Center"/>
+                                                    <TextBlock  Text="наших" HorizontalAlignment="Center"/>
+                                                    <TextBlock  Text="заказов" HorizontalAlignment="Center"/>
+                                                </StackPanel>
                                             </Border>
                                             <ControlTemplate.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Foreground" Value="White"/>
                                                     <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
                                                 </Trigger>
                                             </ControlTemplate.Triggers>
@@ -42,9 +48,6 @@
                                 </Setter>
                             </Style>
                         </Button.Style>
-                        <Button.Content>
-                            <Image Source="/Resources/accaunt.png" MaxHeight="45" MaxWidth="45"/>
-                        </Button.Content>
                     </Button>
                 </Border>
 
@@ -54,7 +57,7 @@
                     Width="80"
                     Margin="10 0 0 0">
 
-                    <Button x:Name="MyRentsBTN" FontSize="10" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                    <Button x:Name="MyRentsBTN" Click="MyRentsBTN_Click" FontSize="10" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="Template">
@@ -63,7 +66,72 @@
                                             <Border x:Name="Borderpox" CornerRadius="15" >
                                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                                     <!--<ContentPresenter Content="{TemplateBinding Content}" />-->
-                                                    <TextBlock  Text="Заявки" HorizontalAlignment="Center"/>
+                                                    <TextBlock  Text="Товары" HorizontalAlignment="Center"/>
+                                                    <TextBlock  Text="в пункте" HorizontalAlignment="Center"/>
+                                                    <TextBlock  Text="выдачи" HorizontalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Border>
+
+                <Border CornerRadius="15"
+                    Background="#FFD9D9D9"
+                    Height="60"
+                    Width="80"
+                    Margin="10 0 0 0">
+
+                    <Button x:Name="ProdToDel" Click="ProdToDel_Click" FontSize="10" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Row="0" Height="NaN">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="Borderpox" CornerRadius="15" >
+                                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                    <!--<ContentPresenter Content="{TemplateBinding Content}" />-->
+                                                    <TextBlock  Text="Товары" HorizontalAlignment="Center"/>
+                                                    <TextBlock  Text="на заказ" HorizontalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Border>
+
+                <Border CornerRadius="15"
+                    Background="#FFD9D9D9"
+                    Height="60"
+                    Width="80"
+                    Margin="10 0 0 0">
+
+                    <Button x:Name="CliOrders" Click="CliOrders_Click" FontSize="10" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Row="0" Height="NaN">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="Borderpox" CornerRadius="15" >
+                                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                    <!--<ContentPresenter Content="{TemplateBinding Content}" />-->
+                                                    <TextBlock  Text="Заказы" HorizontalAlignment="Center"/>
                                                     <TextBlock  Text="клиентов" HorizontalAlignment="Center"/>
                                                 </StackPanel>
                                             </Border>
@@ -79,15 +147,16 @@
                         </Button.Style>
                     </Button>
                 </Border>
+                
             </StackPanel>
 
 
         </Grid>
 
-        <Grid Grid.Row="0" HorizontalAlignment="Right" Margin="0 10 40 0" Width="500">
+        <Grid Grid.Row="0" HorizontalAlignment="Right" Margin="0 10 40 0" Width="370">
 
             <TextBox Height="30" 
-                         Width="300" 
+                         Width="200" 
                          Margin="10 0 10 0"
                          x:Name="SearchTB" 
                          FontSize="20"

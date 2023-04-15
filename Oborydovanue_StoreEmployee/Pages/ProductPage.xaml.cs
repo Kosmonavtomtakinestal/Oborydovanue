@@ -59,5 +59,25 @@ namespace Oborydovanue_StoreEmployee.Pages
         {
             Refresh();
         }
+
+        private void ProdToDel_Click(object sender, RoutedEventArgs e)
+        {
+            SaveSomeData.productPage.SmallFrame.Navigate(new BookOrderPage());
+        }
+
+        private void MyRentsBTN_Click(object sender, RoutedEventArgs e)
+        {
+            SaveSomeData.productPage.SmallFrame.Navigate(new ProductListPage());
+        }
+
+        private void CliOrders_Click(object sender, RoutedEventArgs e)
+        {
+            SaveSomeData.productPage.SmallFrame.Navigate(new ClientRentsPage());
+        }
+
+        private void OurDelBTN_Click(object sender, RoutedEventArgs e)
+        {
+            SaveSomeData.productPage.SmallFrame.Navigate(new OurDeliveryPage());
+        }
     }
 }

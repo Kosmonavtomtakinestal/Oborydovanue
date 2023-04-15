@@ -28,15 +28,10 @@ namespace Oborydovanue_StoreEmployee.Pages.PageItems
             ProductList.ItemsSource = Connection.db.Stock.Where(x => x.IdPoinOfIssue == SaveSomeData.storeEmployee.IdpoinOfIssue).ToList();
         }
 
-        private void EditBTN_Click(object sender, RoutedEventArgs e)
-        {
-            var sel = (sender as Button).DataContext as Stock;
-
-        }
-
         private void ToDeliveryBTN_Click(object sender, RoutedEventArgs e)
         {
             var sel = (sender as Button).DataContext as Stock;
+            new WindowToDelivery(sel).Show();
         }
 
     }

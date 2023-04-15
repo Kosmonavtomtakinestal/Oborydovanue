@@ -1,62 +1,52 @@
-﻿<Page x:Class="Oborydovanue_StoreEmployee.Pages.PageItems.ProductListPage"
+﻿<Page x:Class="Oborydovanue_StoreEmployee.Pages.PageItems.OurDeliveryPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Oborydovanue_StoreEmployee.Pages.PageItems"
+      xmlns:db="clr-namespace:Oborydovanue_StoreEmployee.DataBase"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductListPage">
+      Title="OurDeliveryPage">
 
     <Grid>
-        
-        <ListView x:Name="ProductList" Background="{x:Null}" BorderBrush="{x:Null}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}">
+
+        <ListView x:Name="DelList" ItemsSource="{Binding Deliveries}" Background="{x:Null}" BorderBrush="{x:Null}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}">
 
             <ListView.ItemTemplate>
-                
-                <DataTemplate>
 
-                    <Grid Height="120" Margin="10" Background="White">
+                <DataTemplate DataType="{x:Type db:Delivery}">
+
+                    <Grid Height="120" Margin="5" Background="White">
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition MinWidth="100"/>
                             <ColumnDefinition MinWidth="140"/>
-                            <ColumnDefinition MinWidth="80"/>
-                            <ColumnDefinition MinWidth="80"/>
-                            <ColumnDefinition MinWidth="120"/>
+                            <ColumnDefinition MinWidth="100"/>
+                            <ColumnDefinition MinWidth="100"/>
+
                         </Grid.ColumnDefinitions>
 
-                        <Image Source="{Binding Product.Photo}" Margin="10"/>
+                        <ListView ItemsSource="{Binding Path=DeliveryProducts}">
+                            <ListView.ItemTemplate >
+                                <DataTemplate DataType="{x:Type db:DeliveryProducts}" >
+                                    <StackPanel Orientation="Horizontal" >
+                                        <TextBlock Text="{Binding Stock.Product.Name}"/>
+                                        <TextBlock Text=" "/>
+                                        <TextBlock Text="{Binding Count}"/>
+                                        <TextBlock Text="шт"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
 
                         <StackPanel Grid.Column="1" VerticalAlignment="Center">
 
-                            <TextBlock HorizontalAlignment="Center" Text="{Binding Product.Name}"/>
-                            <TextBlock HorizontalAlignment="Center" Text="{Binding Product.Discription}"/>
-                            <TextBlock HorizontalAlignment="Center">
-                                <TextBlock.Text>
-                                    <MultiBinding StringFormat="{}{0}р. за час">
-                                        <Binding Path="Product.Price"/>
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            
-                        </StackPanel>
-
-                        <StackPanel Grid.Column="2" VerticalAlignment="Center">
-
-                            <TextBlock HorizontalAlignment="Center" Text="На складе"/>
-                            <TextBlock HorizontalAlignment="Center" Text="{Binding Count}"/>
+                            <TextBlock HorizontalAlignment="Center" Text="{Binding Deliverier.Name}"/>
+                            <TextBlock HorizontalAlignment="Center" Text="{Binding Deliverier.Surname}"/>
 
                         </StackPanel>
 
-                        <StackPanel Grid.Column="3" VerticalAlignment="Center">
-
-                            <TextBlock HorizontalAlignment="Center" Text="На аренде"/>
-                            <TextBlock HorizontalAlignment="Center" Text="{Binding Count}"/>
-
-                        </StackPanel>
-
-                        <Button x:Name="ToDeliveryBTN" Click="ToDeliveryBTN_Click" Grid.Column="4" FontSize="12" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" Content="Добавить в заявку" RenderTransformOrigin="0.5,0.504" Height="NaN">
+                        <Button x:Name="ReadyDeliveryBTN" Click="ReadyDeliveryBTN_Click" Grid.Column="2" FontSize="12" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" Content="Заказа прибыл" RenderTransformOrigin="0.5,0.504" Height="NaN">
                             <Button.Style>
                                 <Style TargetType="{x:Type Button}">
                                     <Setter Property="Template">
@@ -77,11 +67,11 @@
                                 </Style>
                             </Button.Style>
                         </Button>
-                        
+
                     </Grid>
 
                 </DataTemplate>
-            
+
             </ListView.ItemTemplate>
 
             <ListView.ItemsPanel>
@@ -91,6 +81,7 @@
             </ListView.ItemsPanel>
 
         </ListView>
-        
+
+
     </Grid>
 </Page>
