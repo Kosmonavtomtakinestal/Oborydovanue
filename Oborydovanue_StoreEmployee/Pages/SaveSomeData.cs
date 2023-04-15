@@ -17,5 +17,8 @@ namespace Oborydovanue_StoreEmployee.Pages
         public static ProductPage productPage;
 
         public static ProductListPage productListPage;
+
+        public static List<Stock> stocks = new List<Stock>();
+
     }
 }
