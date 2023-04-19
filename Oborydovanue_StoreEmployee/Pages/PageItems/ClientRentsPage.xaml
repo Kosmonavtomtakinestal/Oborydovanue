@@ -33,7 +33,7 @@
                             <TextBlock HorizontalAlignment="Center">
                                 <TextBlock.Text>
                                     <MultiBinding StringFormat="{}{0}р. за час">
-                                        <Binding Path="Product.Price"/>
+                                        <Binding Path="Stock.Product.Price"/>
                                     </MultiBinding>
                                 </TextBlock.Text>
                             </TextBlock>
@@ -50,6 +50,8 @@
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" VerticalAlignment="Center">
+
+                            <TextBlock HorizontalAlignment="Center" Text="{Binding Stock.Product.Name}"></TextBlock>
 
                             <TextBlock HorizontalAlignment="Center" Text="{Binding StatusRent}" TextWrapping="Wrap"/>
 
