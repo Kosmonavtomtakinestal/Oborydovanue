@@ -15,10 +15,10 @@ namespace Oborydovanue_Manager.DataBase
     public partial class Supply
     {
         public int Id { get; set; }
-        public int IdOrder { get; set; }
-        public int IdSupplier { get; set; }
-        public int IdManager { get; set; }
-        public int IdStatus { get; set; }
+        public Nullable<int> IdOrder { get; set; }
+        public Nullable<int> IdSupplier { get; set; }
+        public Nullable<int> IdManager { get; set; }
+        public Nullable<int> IdStatus { get; set; }
     
         public virtual Manager Manager { get; set; }
         public virtual Order Order { get; set; }

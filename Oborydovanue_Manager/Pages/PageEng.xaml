@@ -4,33 +4,121 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Oborydovanue_Manager.Pages"
+      xmlns:db="clr-namespace:Oborydovanue_Manager.DataBase"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       DataContext="{Binding RelativeSource={RelativeSource Self}}"
       Title="PageEng">
+    
+    
+    <!--<DataGrid  AutoGenerateColumns="False"   x:Name="ListEng" ItemsSource="{Binding OrderNotInSupply}" HeadersVisibility="Column"  IsReadOnly="True"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionUnit="CellOrRowHeader" SelectionMode="Extended">
 
-    <ListView x:Name="ListEng" ItemsSource="{Binding OrderNotInSupply}" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-        <ListView.ItemsPanel>
+        <DataGrid.RowStyle>
+            <Style TargetType="DataGridRow">
+                <Style.Triggers>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background" Value="Green" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </DataGrid.RowStyle>
+        <DataGrid.Columns>
+            <DataGridTemplateColumn Header="Номер заказа" Width="*">
+                <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate DataType="{x:Type db:Order}">
+                            <TextBlock Text="{Binding Id}"/>
+                        </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
 
-            <ItemsPanelTemplate>
+            <DataGridTemplateColumn Header="Наименование материала" Width="*" >
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate DataType="{x:Type db:Order}">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Material.Id, StringFormat={}Номер: {0}}"/>
+                            <TextBlock Text="{Binding Material.Name, StringFormat={}Наименование: {0}}"/>
+                            <TextBlock Text="{Binding Material.Count, StringFormat='{}Количество на складе: {0}'}"/>
+                            <TextBlock Text="{Binding Material.Cost, StringFormat={}Стоимость: {0}}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
 
-                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+            <DataGridTemplateColumn Header="Количество" Width="*">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate DataType="{x:Type db:Order}">
+                        <TextBlock Text="{Binding Count, StringFormat='{}Требование на количество от инженера: {0}'}"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
 
-            </ItemsPanelTemplate>
-        </ListView.ItemsPanel>
+            <DataGridTemplateColumn Header="ФИО инженера" Width="*" >
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate DataType="{x:Type db:Order}">
+                        <StackPanel>
+                            <TextBlock  Text="{Binding Engineer.Name}"/>
+                            <TextBlock Text="{Binding Engineer.Surname}"/>
+                            <TextBlock Text="{Binding Engineer.Patronymic}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Header="" Width="*">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate >
+                        <Button Style="{DynamicResource ButtonStyleZalupa}" 
+                                Click="Button_Click">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"
+                                               FontSize="24"
+                                               Text="Оформить заказ " 
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+    </DataGrid>-->
+    <ListView x:Name="EngListView"  ItemsSource="{Binding OrderNotInSupply}"  Style="{StaticResource ListViewStyle}"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+
         <ListView.ItemTemplate>
             <DataTemplate>
-                <Grid Width="250" Height="450">
+                <Grid >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock VerticalAlignment="Center" Text="{Binding Supplier.Name}" TextAlignment="Center" 
-                                       TextWrapping="Wrap" HorizontalAlignment="Center"  FontSize="26" Grid.Row="0"/>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock VerticalAlignment="Center"  Text="{Binding Id}"   FontSize="26" />
+                    <StackPanel Grid.Column="1">
+                        <TextBlock VerticalAlignment="Center"  Text="{Binding Material.Name}"   FontSize="26" />
+                        <TextBlock VerticalAlignment="Center"  Text="{Binding Material.Count}"   FontSize="26" />
+                        <TextBlock VerticalAlignment="Center"  Text="{Binding Material.Cost}"   FontSize="26" />
+                    </StackPanel>
+                        <TextBlock VerticalAlignment="Center"  Text="{Binding Engineer.Name}"   FontSize="26" />
+                        <TextBlock VerticalAlignment="Center"  Text="{Binding Engineer.Surname}"   FontSize="26" />
+                        <TextBlock VerticalAlignment="Center"  Text="{Binding Engineer.Patronymic}"   FontSize="26" />
+
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        
+                     </StackPanel>
+                    <StackPanel Grid.Column="3">
+
+                    </StackPanel>
+                    <StackPanel Grid.Column="4">
+
+                    </StackPanel>
                 </Grid>
             </DataTemplate>
+
         </ListView.ItemTemplate>
     </ListView>
 </Page>

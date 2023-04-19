@@ -6,7 +6,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Pages/Dictionary1.xaml"/>
+                <ResourceDictionary Source="/Style/Dictionary1.xaml"/>
+                <ResourceDictionary Source="/Style/DataGridStl.xaml"/>
+                <ResourceDictionary Source="/Style/ListStl.xaml"/>
+                <ResourceDictionary Source="/Style/TextBlockStl.xaml"/>
+                <ResourceDictionary Source="/Style/TextBoxStl.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

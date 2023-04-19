@@ -4,16 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище ArendaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище ArendaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Passport" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Passport" Type="nvarchar" MaxLength="11" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="18" />
           <Property Name="Surname" Type="nvarchar" MaxLength="50" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
@@ -23,25 +23,25 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdProduct" Type="int" Nullable="false" />
-          <Property Name="IdMaterial" Type="int" Nullable="false" />
-          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="IdProduct" Type="int" />
+          <Property Name="IdMaterial" Type="int" />
+          <Property Name="Count" Type="int" />
         </EntityType>
         <EntityType Name="Delivered">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdDelivery" Type="int" Nullable="false" />
-          <Property Name="IdStoreemployee" Type="int" Nullable="false" />
-          <Property Name="DateTine" Type="date" Nullable="false" />
+          <Property Name="IdDelivery" Type="int" />
+          <Property Name="IdStoreemployee" Type="int" />
+          <Property Name="DateTine" Type="date" />
         </EntityType>
         <EntityType Name="Deliverier">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="Surname" Type="nvarchar" MaxLength="50" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
@@ -52,26 +52,26 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BeginDateTime" Type="date" Nullable="false" />
-          <Property Name="IdPointOfIssue" Type="int" Nullable="false" />
-          <Property Name="IdDeliverier" Type="int" Nullable="false" />
+          <Property Name="BeginDateTime" Type="datetime" />
+          <Property Name="IdPointOfIssue" Type="int" />
+          <Property Name="IdDeliverier" Type="int" />
         </EntityType>
         <EntityType Name="DeliveryProducts">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdDelivery" Type="int" Nullable="false" />
-          <Property Name="IdProduct" Type="int" Nullable="false" />
-          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="IdDelivery" Type="int" />
+          <Property Name="IdStock" Type="int" />
+          <Property Name="Count" Type="int" />
         </EntityType>
         <EntityType Name="Engineer">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="Surname" Type="nvarchar" MaxLength="50" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
@@ -81,8 +81,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="Surname" Type="nvarchar" MaxLength="50" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
@@ -92,17 +92,17 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Cost" Type="money" Nullable="false" />
-          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="Count" Type="int" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdMaterial" Type="int" Nullable="false" />
-          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="IdMaterial" Type="int" />
+          <Property Name="Count" Type="int" />
           <Property Name="IdEngineer" Type="int" />
         </EntityType>
         <EntityType Name="OrganizationEmployee">
@@ -110,8 +110,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="PointOfIssue">
           <Key>
@@ -125,20 +125,22 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Discription" Type="nvarchar(max)" />
           <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Rent">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
-          <Property Name="RentTime" Type="decimal" Precision="6" Scale="2" Nullable="false" />
-          <Property Name="IdStoreEmployee" Type="int" Nullable="false" />
-          <Property Name="IdClient" Type="int" Nullable="false" />
-          <Property Name="IdStock" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="RentTime" Type="int" />
+          <Property Name="IdStoreEmployee" Type="int" />
+          <Property Name="IdClient" Type="int" />
+          <Property Name="IdStock" Type="int" />
+          <Property Name="Returned" Type="bit" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -152,19 +154,19 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdPoinOfIssue" Type="int" Nullable="false" />
-          <Property Name="IdProduct" Type="int" Nullable="false" />
-          <Property Name="Count" Type="int" Nullable="false" />
-          <Property Name="MinCreateCount" Type="int" Nullable="false" />
+          <Property Name="IdPoinOfIssue" Type="int" />
+          <Property Name="IdProduct" Type="int" />
+          <Property Name="Count" Type="int" />
+          <Property Name="MinCreateCount" Type="int" />
         </EntityType>
         <EntityType Name="StoreEmployee">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="IdpoinOfIssue" Type="int" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdpoinOfIssue" Type="int" />
           <Property Name="Surname" Type="nvarchar" MaxLength="50" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
@@ -174,31 +176,21 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="11" />
         </EntityType>
         <EntityType Name="Supply">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdOrder" Type="int" Nullable="false" />
-          <Property Name="IdSupplier" Type="int" Nullable="false" />
+          <Property Name="IdOrder" Type="int" />
+          <Property Name="IdSupplier" Type="int" />
           <Property Name="IdManager" Type="int" />
-          <Property Name="IdStatus" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
+          <Property Name="IdStatus" Type="int" />
         </EntityType>
         <Association Name="FK_Compound_Material">
-          <End Role="Material" Type="Self.Material" Multiplicity="1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
           <End Role="Compound" Type="Self.Compound" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Material">
@@ -210,7 +202,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Compound_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Compound" Type="Self.Compound" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -222,7 +214,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivered_Delivery">
-          <End Role="Delivery" Type="Self.Delivery" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="0..1" />
           <End Role="Delivered" Type="Self.Delivered" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Delivery">
@@ -234,7 +226,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivered_StoreEmployee">
-          <End Role="StoreEmployee" Type="Self.StoreEmployee" Multiplicity="1" />
+          <End Role="StoreEmployee" Type="Self.StoreEmployee" Multiplicity="0..1" />
           <End Role="Delivered" Type="Self.Delivered" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StoreEmployee">
@@ -246,7 +238,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_Deliverier">
-          <End Role="Deliverier" Type="Self.Deliverier" Multiplicity="1" />
+          <End Role="Deliverier" Type="Self.Deliverier" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Deliverier">
@@ -258,7 +250,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_PointOfIssue">
-          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="1" />
+          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PointOfIssue">
@@ -270,7 +262,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DeliveryProducts_Delivery">
-          <End Role="Delivery" Type="Self.Delivery" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="0..1" />
           <End Role="DeliveryProducts" Type="Self.DeliveryProducts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Delivery">
@@ -281,15 +273,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_DeliveryProducts_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+        <Association Name="FK_DeliveryProducts_Stock">
+          <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
           <End Role="DeliveryProducts" Type="Self.DeliveryProducts" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Product">
+            <Principal Role="Stock">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="DeliveryProducts">
-              <PropertyRef Name="IdProduct" />
+              <PropertyRef Name="IdStock" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -306,7 +298,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Material">
-          <End Role="Material" Type="Self.Material" Multiplicity="1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Material">
@@ -318,7 +310,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Rent_Client">
-          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
           <End Role="Rent" Type="Self.Rent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Client">
@@ -330,7 +322,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Rent_Stock">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
           <End Role="Rent" Type="Self.Rent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
@@ -342,7 +334,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Rent_StoreEmployee">
-          <End Role="StoreEmployee" Type="Self.StoreEmployee" Multiplicity="1" />
+          <End Role="StoreEmployee" Type="Self.StoreEmployee" Multiplicity="0..1" />
           <End Role="Rent" Type="Self.Rent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StoreEmployee">
@@ -354,7 +346,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Stock_PointOfIssue">
-          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="1" />
+          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="0..1" />
           <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PointOfIssue">
@@ -366,7 +358,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Stock_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -378,7 +370,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StoreEmployee_PointOfIssue">
-          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="1" />
+          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="0..1" />
           <End Role="StoreEmployee" Type="Self.StoreEmployee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PointOfIssue">
@@ -402,7 +394,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Supply_Order">
-          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
           <End Role="Supply" Type="Self.Supply" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
@@ -414,7 +406,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Supply_Status">
-          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
           <End Role="Supply" Type="Self.Supply" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Status">
@@ -426,7 +418,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Supply_Supplier">
-          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
           <End Role="Supply" Type="Self.Supply" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Supplier">
@@ -457,7 +449,6 @@
           <EntitySet Name="StoreEmployee" EntityType="Self.StoreEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supply" EntityType="Self.Supply" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Compound_Material" Association="Self.FK_Compound_Material">
             <End Role="Material" EntitySet="Material" />
             <End Role="Compound" EntitySet="Compound" />
@@ -486,8 +477,8 @@
             <End Role="Delivery" EntitySet="Delivery" />
             <End Role="DeliveryProducts" EntitySet="DeliveryProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK_DeliveryProducts_Product" Association="Self.FK_DeliveryProducts_Product">
-            <End Role="Product" EntitySet="Product" />
+          <AssociationSet Name="FK_DeliveryProducts_Stock" Association="Self.FK_DeliveryProducts_Stock">
+            <End Role="Stock" EntitySet="Stock" />
             <End Role="DeliveryProducts" EntitySet="DeliveryProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Engineer" Association="Self.FK_Order_Engineer">
@@ -539,7 +530,8 @@
             <End Role="Supply" EntitySet="Supply" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ArendaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -548,10 +540,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Passport" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Passport" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -562,9 +554,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdProduct" Type="Int32" Nullable="false" />
-          <Property Name="IdMaterial" Type="Int32" Nullable="false" />
-          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="IdProduct" Type="Int32" />
+          <Property Name="IdMaterial" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
           <NavigationProperty Name="Material" Relationship="Self.FK_Compound_Material" FromRole="Compound" ToRole="Material" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Compound_Product" FromRole="Compound" ToRole="Product" />
         </EntityType>
@@ -573,9 +565,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdDelivery" Type="Int32" Nullable="false" />
-          <Property Name="IdStoreemployee" Type="Int32" Nullable="false" />
-          <Property Name="DateTine" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdDelivery" Type="Int32" />
+          <Property Name="IdStoreemployee" Type="Int32" />
+          <Property Name="DateTine" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Delivery" Relationship="Self.FK_Delivered_Delivery" FromRole="Delivered" ToRole="Delivery" />
           <NavigationProperty Name="StoreEmployee" Relationship="Self.FK_Delivered_StoreEmployee" FromRole="Delivered" ToRole="StoreEmployee" />
         </EntityType>
@@ -584,7 +576,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -596,9 +588,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BeginDateTime" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="IdPointOfIssue" Type="Int32" Nullable="false" />
-          <Property Name="IdDeliverier" Type="Int32" Nullable="false" />
+          <Property Name="BeginDateTime" Type="DateTime" Precision="3" />
+          <Property Name="IdPointOfIssue" Type="Int32" />
+          <Property Name="IdDeliverier" Type="Int32" />
           <NavigationProperty Name="Delivered" Relationship="Self.FK_Delivered_Delivery" FromRole="Delivery" ToRole="Delivered" />
           <NavigationProperty Name="Deliverier" Relationship="Self.FK_Delivery_Deliverier" FromRole="Delivery" ToRole="Deliverier" />
           <NavigationProperty Name="PointOfIssue" Relationship="Self.FK_Delivery_PointOfIssue" FromRole="Delivery" ToRole="PointOfIssue" />
@@ -609,19 +601,19 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdDelivery" Type="Int32" Nullable="false" />
-          <Property Name="IdProduct" Type="Int32" Nullable="false" />
-          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="IdDelivery" Type="Int32" />
+          <Property Name="IdStock" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
           <NavigationProperty Name="Delivery" Relationship="Self.FK_DeliveryProducts_Delivery" FromRole="DeliveryProducts" ToRole="Delivery" />
-          <NavigationProperty Name="Product" Relationship="Self.FK_DeliveryProducts_Product" FromRole="DeliveryProducts" ToRole="Product" />
+          <NavigationProperty Name="Stock" Relationship="Self.FK_DeliveryProducts_Stock" FromRole="DeliveryProducts" ToRole="Stock" />
         </EntityType>
         <EntityType Name="Engineer">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -632,8 +624,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -644,9 +636,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Count" Type="Int32" />
           <NavigationProperty Name="Compound" Relationship="Self.FK_Compound_Material" FromRole="Material" ToRole="Compound" />
           <NavigationProperty Name="Order" Relationship="Self.FK_Order_Material" FromRole="Material" ToRole="Order" />
         </EntityType>
@@ -655,8 +647,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdMaterial" Type="Int32" Nullable="false" />
-          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="IdMaterial" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
           <Property Name="IdEngineer" Type="Int32" />
           <NavigationProperty Name="Engineer" Relationship="Self.FK_Order_Engineer" FromRole="Order" ToRole="Engineer" />
           <NavigationProperty Name="Material" Relationship="Self.FK_Order_Material" FromRole="Order" ToRole="Material" />
@@ -667,8 +659,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="PointOfIssue">
           <Key>
@@ -685,11 +677,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Discription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Discription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Compound" Relationship="Self.FK_Compound_Product" FromRole="Product" ToRole="Compound" />
-          <NavigationProperty Name="DeliveryProducts" Relationship="Self.FK_DeliveryProducts_Product" FromRole="Product" ToRole="DeliveryProducts" />
           <NavigationProperty Name="Stock" Relationship="Self.FK_Stock_Product" FromRole="Product" ToRole="Stock" />
         </EntityType>
         <EntityType Name="Rent">
@@ -697,11 +689,12 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="RentTime" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
-          <Property Name="IdStoreEmployee" Type="Int32" Nullable="false" />
-          <Property Name="IdClient" Type="Int32" Nullable="false" />
-          <Property Name="IdStock" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="RentTime" Type="Int32" />
+          <Property Name="IdStoreEmployee" Type="Int32" />
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="IdStock" Type="Int32" />
+          <Property Name="Returned" Type="Boolean" />
           <NavigationProperty Name="Client" Relationship="Self.FK_Rent_Client" FromRole="Rent" ToRole="Client" />
           <NavigationProperty Name="Stock" Relationship="Self.FK_Rent_Stock" FromRole="Rent" ToRole="Stock" />
           <NavigationProperty Name="StoreEmployee" Relationship="Self.FK_Rent_StoreEmployee" FromRole="Rent" ToRole="StoreEmployee" />
@@ -719,10 +712,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPoinOfIssue" Type="Int32" Nullable="false" />
-          <Property Name="IdProduct" Type="Int32" Nullable="false" />
-          <Property Name="Count" Type="Int32" Nullable="false" />
-          <Property Name="MinCreateCount" Type="Int32" Nullable="false" />
+          <Property Name="IdPoinOfIssue" Type="Int32" />
+          <Property Name="IdProduct" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="MinCreateCount" Type="Int32" />
+          <NavigationProperty Name="DeliveryProducts" Relationship="Self.FK_DeliveryProducts_Stock" FromRole="Stock" ToRole="DeliveryProducts" />
           <NavigationProperty Name="PointOfIssue" Relationship="Self.FK_Stock_PointOfIssue" FromRole="Stock" ToRole="PointOfIssue" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Stock_Product" FromRole="Stock" ToRole="Product" />
           <NavigationProperty Name="Rent" Relationship="Self.FK_Rent_Stock" FromRole="Stock" ToRole="Rent" />
@@ -732,9 +726,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdpoinOfIssue" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdpoinOfIssue" Type="Int32" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -747,8 +741,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Supply" Relationship="Self.FK_Supply_Supplier" FromRole="Supplier" ToRole="Supply" />
         </EntityType>
         <EntityType Name="Supply">
@@ -756,27 +750,17 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdOrder" Type="Int32" Nullable="false" />
-          <Property Name="IdSupplier" Type="Int32" Nullable="false" />
+          <Property Name="IdOrder" Type="Int32" />
+          <Property Name="IdSupplier" Type="Int32" />
           <Property Name="IdManager" Type="Int32" />
-          <Property Name="IdStatus" Type="Int32" Nullable="false" />
+          <Property Name="IdStatus" Type="Int32" />
           <NavigationProperty Name="Manager" Relationship="Self.FK_Supply_Manager" FromRole="Supply" ToRole="Manager" />
           <NavigationProperty Name="Order" Relationship="Self.FK_Supply_Order" FromRole="Supply" ToRole="Order" />
           <NavigationProperty Name="Status" Relationship="Self.FK_Supply_Status" FromRole="Supply" ToRole="Status" />
           <NavigationProperty Name="Supplier" Relationship="Self.FK_Supply_Supplier" FromRole="Supply" ToRole="Supplier" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <Association Name="FK_Rent_Client">
-          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
           <End Role="Rent" Type="Self.Rent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Client">
@@ -788,7 +772,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Compound_Material">
-          <End Role="Material" Type="Self.Material" Multiplicity="1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
           <End Role="Compound" Type="Self.Compound" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Material">
@@ -800,7 +784,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Compound_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Compound" Type="Self.Compound" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -812,7 +796,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivered_Delivery">
-          <End Role="Delivery" Type="Self.Delivery" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="0..1" />
           <End Role="Delivered" Type="Self.Delivered" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Delivery">
@@ -824,7 +808,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivered_StoreEmployee">
-          <End Role="StoreEmployee" Type="Self.StoreEmployee" Multiplicity="1" />
+          <End Role="StoreEmployee" Type="Self.StoreEmployee" Multiplicity="0..1" />
           <End Role="Delivered" Type="Self.Delivered" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StoreEmployee">
@@ -836,7 +820,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_Deliverier">
-          <End Role="Deliverier" Type="Self.Deliverier" Multiplicity="1" />
+          <End Role="Deliverier" Type="Self.Deliverier" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Deliverier">
@@ -848,7 +832,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_PointOfIssue">
-          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="1" />
+          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PointOfIssue">
@@ -860,7 +844,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DeliveryProducts_Delivery">
-          <End Role="Delivery" Type="Self.Delivery" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="0..1" />
           <End Role="DeliveryProducts" Type="Self.DeliveryProducts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Delivery">
@@ -871,15 +855,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_DeliveryProducts_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+        <Association Name="FK_DeliveryProducts_Stock">
+          <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
           <End Role="DeliveryProducts" Type="Self.DeliveryProducts" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Product">
+            <Principal Role="Stock">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="DeliveryProducts">
-              <PropertyRef Name="IdProduct" />
+              <PropertyRef Name="IdStock" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -896,7 +880,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Supply_Manager">
-          <End Role="Manager" Type="Self.Manager" Multiplicity="1" />
+          <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
           <End Role="Supply" Type="Self.Supply" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Manager">
@@ -908,7 +892,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Material">
-          <End Role="Material" Type="Self.Material" Multiplicity="1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Material">
@@ -920,7 +904,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Supply_Order">
-          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
           <End Role="Supply" Type="Self.Supply" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
@@ -932,7 +916,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Stock_PointOfIssue">
-          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="1" />
+          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="0..1" />
           <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PointOfIssue">
@@ -944,7 +928,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StoreEmployee_PointOfIssue">
-          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="1" />
+          <End Role="PointOfIssue" Type="Self.PointOfIssue" Multiplicity="0..1" />
           <End Role="StoreEmployee" Type="Self.StoreEmployee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PointOfIssue">
@@ -956,7 +940,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Stock_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -968,7 +952,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Rent_Stock">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
           <End Role="Rent" Type="Self.Rent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
@@ -980,7 +964,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Rent_StoreEmployee">
-          <End Role="StoreEmployee" Type="Self.StoreEmployee" Multiplicity="1" />
+          <End Role="StoreEmployee" Type="Self.StoreEmployee" Multiplicity="0..1" />
           <End Role="Rent" Type="Self.Rent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StoreEmployee">
@@ -992,7 +976,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Supply_Status">
-          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
           <End Role="Supply" Type="Self.Supply" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Status">
@@ -1004,7 +988,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Supply_Supplier">
-          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
           <End Role="Supply" Type="Self.Supply" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Supplier">
@@ -1015,7 +999,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ArendaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ArendaEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="Compound" EntityType="Self.Compound" />
           <EntitySet Name="Delivered" EntityType="Self.Delivered" />
@@ -1035,7 +1019,6 @@
           <EntitySet Name="StoreEmployee" EntityType="Self.StoreEmployee" />
           <EntitySet Name="Supplier" EntityType="Self.Supplier" />
           <EntitySet Name="Supply" EntityType="Self.Supply" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK_Rent_Client" Association="Self.FK_Rent_Client">
             <End Role="Client" EntitySet="Client" />
             <End Role="Rent" EntitySet="Rent" />
@@ -1068,8 +1051,8 @@
             <End Role="Delivery" EntitySet="Delivery" />
             <End Role="DeliveryProducts" EntitySet="DeliveryProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK_DeliveryProducts_Product" Association="Self.FK_DeliveryProducts_Product">
-            <End Role="Product" EntitySet="Product" />
+          <AssociationSet Name="FK_DeliveryProducts_Stock" Association="Self.FK_DeliveryProducts_Stock">
+            <End Role="Stock" EntitySet="Stock" />
             <End Role="DeliveryProducts" EntitySet="DeliveryProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Engineer" Association="Self.FK_Order_Engineer">
@@ -1122,7 +1105,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ArendaModelContainer" CdmEntityContainer="ArendaEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ArendaModelContainer" CdmEntityContainer="ArendaEntities1">
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="ArendaModel.Client">
               <MappingFragment StoreEntitySet="Client">
@@ -1184,7 +1167,7 @@
               <MappingFragment StoreEntitySet="DeliveryProducts">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdDelivery" ColumnName="IdDelivery" />
-                <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+                <ScalarProperty Name="IdStock" ColumnName="IdStock" />
                 <ScalarProperty Name="Count" ColumnName="Count" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1257,6 +1240,7 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Discription" ColumnName="Discription" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1269,6 +1253,7 @@
                 <ScalarProperty Name="IdStoreEmployee" ColumnName="IdStoreEmployee" />
                 <ScalarProperty Name="IdClient" ColumnName="IdClient" />
                 <ScalarProperty Name="IdStock" ColumnName="IdStock" />
+                <ScalarProperty Name="Returned" ColumnName="Returned" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1321,17 +1306,6 @@
                 <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
                 <ScalarProperty Name="IdManager" ColumnName="IdManager" />
                 <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="ArendaModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

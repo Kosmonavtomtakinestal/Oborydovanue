@@ -21,8 +21,8 @@ namespace Oborydovanue_Manager.DataBase
         }
     
         public int Id { get; set; }
-        public int IdMaterial { get; set; }
-        public int Count { get; set; }
+        public Nullable<int> IdMaterial { get; set; }
+        public Nullable<int> Count { get; set; }
         public Nullable<int> IdEngineer { get; set; }
     
         public virtual Engineer Engineer { get; set; }

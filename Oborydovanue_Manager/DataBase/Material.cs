@@ -23,8 +23,8 @@ namespace Oborydovanue_Manager.DataBase
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public decimal Cost { get; set; }
-        public int Count { get; set; }
+        public Nullable<decimal> Cost { get; set; }
+        public Nullable<int> Count { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compound> Compound { get; set; }

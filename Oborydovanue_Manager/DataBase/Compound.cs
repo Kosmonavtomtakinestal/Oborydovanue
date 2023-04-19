@@ -15,9 +15,9 @@ namespace Oborydovanue_Manager.DataBase
     public partial class Compound
     {
         public int Id { get; set; }
-        public int IdProduct { get; set; }
-        public int IdMaterial { get; set; }
-        public int Count { get; set; }
+        public Nullable<int> IdProduct { get; set; }
+        public Nullable<int> IdMaterial { get; set; }
+        public Nullable<int> Count { get; set; }
     
         public virtual Material Material { get; set; }
         public virtual Product Product { get; set; }

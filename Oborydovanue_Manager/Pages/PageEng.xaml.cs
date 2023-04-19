@@ -25,14 +25,14 @@ namespace Oborydovanue_Manager.Pages
     /// </summary>
     public partial class PageEng : Page
     {
-        public IEnumerable<Supply> OrderNotInSupply
+        public IEnumerable<Order> OrderNotInSupply
         {
-            get { return (IEnumerable<Supply>)GetValue(OrderNotInSupplyProperty); }
+            get { return (IEnumerable<Order>)GetValue(OrderNotInSupplyProperty); }
             set { SetValue(OrderNotInSupplyProperty, value); }
         }
 
         public static readonly DependencyProperty OrderNotInSupplyProperty =
-            DependencyProperty.Register("OrderNotInSupply", typeof(IEnumerable<Supply>), typeof(PageEng));
+            DependencyProperty.Register("OrderNotInSupply", typeof(IEnumerable<Order>), typeof(PageEng));
 
 
         public PageEng()
@@ -43,8 +43,13 @@ namespace Oborydovanue_Manager.Pages
 
             db.Supplier.Load();
             db.Order.Load();
+            db.Material.Load();
 
-            OrderNotInSupply = db.Order.Local.Where(o => db.Supply.Any(s => s.IdOrder != o.Id)).SelectMany(x => x.Supply);
+            OrderNotInSupply
+                = db.Order.Local.Where(x => x.Supply.FirstOrDefault(s => s.IdManager == null) != null);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e) =>
+            new OrderWork((sender as Button).DataContext as Order).ShowDialog();
     }
 }

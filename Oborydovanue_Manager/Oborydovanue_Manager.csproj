@@ -41,6 +41,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -78,86 +82,103 @@
       <DependentUpon>ArendaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Client.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Compound.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Connection.cs" />
+    <Compile Include="DataBase\DataBase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\DataBase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\DataBase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBase.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\Delivered.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Deliverier.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Delivery.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\DeliveryProducts.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Engineer.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Manager.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Material.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBase\ModelOborudovanie.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelOborudovanie.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBase\ModelOborudovanie.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBase\ModelOborudovanie.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelOborudovanie.edmx</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Order.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\OrganizationEmployee.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\PointOfIssue.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Product.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Rent.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Status.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Stock.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\StoreEmployee.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Supplier.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Supply.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBase\sysdiagrams.cs">
-      <DependentUpon>ModelOborudovanie.tt</DependentUpon>
+      <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\Dictionary1.xaml">
+    <Page Include="OrderWork.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DobavSupplier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\ListStl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,8 +194,33 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Style\DataGridStl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SupplierPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\TextBlockStl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\TextBoxStl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrderWork.xaml.cs">
+      <DependentUpon>OrderWork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DobavSupplier.xaml.cs">
+      <DependentUpon>DobavSupplier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ManagerWork.xaml.cs">
       <DependentUpon>ManagerWork.xaml</DependentUpon>
     </Compile>
@@ -184,7 +230,13 @@
     <Compile Include="Pages\PageManager.xaml.cs">
       <DependentUpon>PageManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SaveSomeData.cs" />
+    <Compile Include="Pages\SupplierPage.xaml.cs">
+      <DependentUpon>SupplierPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -202,10 +254,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DataBase\ModelOborudovanie.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelOborudovanie.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="ArendaDataSet.xsc">
       <DependentUpon>ArendaDataSet.xsd</DependentUpon>
     </None>
@@ -217,8 +265,12 @@
     <None Include="ArendaDataSet.xss">
       <DependentUpon>ArendaDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataBase\ModelOborudovanie.edmx.diagram">
-      <DependentUpon>ModelOborudovanie.edmx</DependentUpon>
+    <EntityDeploy Include="DataBase\DataBase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataBase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataBase\DataBase.edmx.diagram">
+      <DependentUpon>DataBase.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -233,17 +285,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBase\ModelOborudovanie.Context.tt">
+    <Content Include="DataBase\DataBase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelOborudovanie.Context.cs</LastGenOutput>
-      <DependentUpon>ModelOborudovanie.edmx</DependentUpon>
+      <DependentUpon>DataBase.edmx</DependentUpon>
+      <LastGenOutput>DataBase.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DataBase\ModelOborudovanie.tt">
+    <Content Include="DataBase\DataBase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelOborudovanie.edmx</DependentUpon>
-      <LastGenOutput>ModelOborudovanie.cs</LastGenOutput>
+      <DependentUpon>DataBase.edmx</DependentUpon>
+      <LastGenOutput>DataBase.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

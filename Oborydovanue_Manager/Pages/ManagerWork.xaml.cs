@@ -19,11 +19,14 @@ namespace Oborydovanue_Manager.Pages
     /// </summary>
     public partial class ManagerWork : Window
     {
+
+        public static ManagerWork Instance { get; private set; }
+
         public ManagerWork()
         {
             InitializeComponent();
             
-
+            Instance = this;
             MainFrame.Navigate(new PageEng());
         }
 
@@ -31,7 +34,7 @@ namespace Oborydovanue_Manager.Pages
 
         private void DeliverBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainFrame.Navigate(new SupplierPage());
         }
 
         private void EngBtn_Click(object sender, RoutedEventArgs e)
@@ -46,12 +49,12 @@ namespace Oborydovanue_Manager.Pages
 
         private void HistoryBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new HistoryPage());
         }
 
         private void ProfileBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new ProfilePage());
         }
     }
 }
