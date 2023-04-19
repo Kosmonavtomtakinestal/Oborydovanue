@@ -57,7 +57,6 @@ namespace Oborydovanie_Client.Pages
                     IdClient = SaveSomeData.client.Id,
                     IdStock = SaveSomeData.stock.Id,
                     Returned = false
-
                 };
                 try
                 {
