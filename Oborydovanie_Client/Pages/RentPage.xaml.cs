@@ -55,8 +55,8 @@ namespace Oborydovanie_Client.Pages
                     Date = StartTimeCalendar.SelectedDate.Value,
                     RentTime = int.Parse(CountDay.Text.Trim()),
                     IdClient = SaveSomeData.client.Id,
-                    IdStock = SaveSomeData.stock.Id
-
+                    IdStock = SaveSomeData.stock.Id,
+                    Returned = false
                 };
                 try
                 {

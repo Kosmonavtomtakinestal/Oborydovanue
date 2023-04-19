@@ -30,15 +30,20 @@ namespace Oborydovanue_StoreEmployee.Pages.PageItems
         private void GetToCliBTN_Click(object sender, RoutedEventArgs e)
         {
             var sel = (sender as Button).DataContext as Rent;
-            sel.IdStoreEmployee = SaveSomeData.storeEmployee.Id;
-            Connection.db.SaveChanges();
-            RentList.ItemsSource = Connection.db.Rent.Where(x => x.Stock.IdPoinOfIssue == SaveSomeData.storeEmployee.IdpoinOfIssue && x.Returned == false).ToList();
+            if (sel.Stock.Count > 1)
+            {
+                sel.IdStoreEmployee = SaveSomeData.storeEmployee.Id;
+                sel.Stock.Count--;
+                Connection.db.SaveChanges();
+                RentList.ItemsSource = Connection.db.Rent.Where(x => x.Stock.IdPoinOfIssue == SaveSomeData.storeEmployee.IdpoinOfIssue && x.Returned == false).ToList();
+            }
         }
 
         private void ReturnProd_Click(object sender, RoutedEventArgs e)
         {
             var sel = (sender as Button).DataContext as Rent;
             sel.Returned = true;
+            sel.Stock.Count++;
             Connection.db.SaveChanges();
             RentList.ItemsSource = Connection.db.Rent.Where(x => x.Stock.IdPoinOfIssue == SaveSomeData.storeEmployee.IdpoinOfIssue && x.Returned == false).ToList();
         }
