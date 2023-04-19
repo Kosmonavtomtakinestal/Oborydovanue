@@ -1,0 +1,196 @@
+﻿<Page x:Class="Oborydovanie_Client.Pages.MyRents"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Oborydovanie_Client.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MyRents">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" HorizontalAlignment="Left">
+
+            <StackPanel Orientation="Horizontal" Margin="20 10 0 0">
+
+                <Border CornerRadius="40"
+                    Background="#FFD9D9D9"
+                    Height="60"
+                    Width="60">
+                    <Button x:Name="AccountBTN" Click="AccountBTN_Click" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="Borderpox" CornerRadius="40" >
+                                                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                        <Button.Content>
+                            <Image Source="/Resources/accaunt.png" MaxHeight="45" MaxWidth="45"/>
+                        </Button.Content>
+                    </Button>
+                </Border>
+
+                <Border CornerRadius="40"
+                    Background="#FFD9D9D9"
+                    Height="60"
+                    Width="60" 
+                    Margin="10 0 0 0">
+                    <Button x:Name="PointBTN" Click="PointBTN_Click" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="Borderpox" CornerRadius="40" >
+                                                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                        <Button.Content>
+                            <Image Source="/Resources/point.png" MaxHeight="45" MaxWidth="45"/>
+                        </Button.Content>
+                    </Button>
+                </Border>
+
+                <Border CornerRadius="15"
+                    Background="#FFD9D9D9"
+                    Height="60"
+                    Width="80"
+                    Margin="10 0 0 0">
+
+                    <Button x:Name="ProductBTN" Click="ProductBTN_Click" FontSize="10" Content="Все товары" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="Borderpox" CornerRadius="15" >
+                                                <StackPanel>
+                                                    <Image Source="/Resources/rent.png" MaxHeight="40"/>
+                                                    <!--<ContentPresenter Content="{TemplateBinding Content}" />-->
+                                                    <TextBlock HorizontalAlignment="Center" Text="Все товары"/>
+                                                </StackPanel>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Border>
+            </StackPanel>
+
+        </Grid>
+
+        <Border Grid.Row="1" 
+                Background="#FFD9D9D9" 
+                Margin="20"
+                CornerRadius="10">
+
+            <ListView x:Name="RentList" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Grid Height="50" Margin="10" Background="White">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition MinWidth="100"/>
+                                <ColumnDefinition MinWidth="130"/>
+                                <ColumnDefinition MinWidth="100"/>
+                                <ColumnDefinition MinWidth="100"/>
+                                <ColumnDefinition MinWidth="120"/>
+                                <ColumnDefinition MinWidth="120"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+
+                                <TextBlock Text="Дата начала" Margin="5 0 0 0"/>
+                                
+                                <TextBlock Text="{Binding Date, StringFormat=dd.MM.yy}"
+                                           HorizontalAlignment="Center"/>
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+
+                                <TextBlock Text="Количетсво дней"/>
+                                
+                                <TextBlock Text="{Binding RentTime}"
+                                           HorizontalAlignment="Center"/>
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+
+                                <TextBlock Text="Пункт выдачи"/>
+
+                                <TextBlock Text="{Binding Stock.PointOfIssue.Addres}" 
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="3">
+
+                                <TextBlock Text="Товар"/>
+
+                                <TextBlock Text="{Binding Stock.Product.Name}" 
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="4">
+
+                                <TextBlock Text="Статус"/>
+
+                                <TextBlock Text="{Binding StatusRent}" 
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Border>
+
+    </Grid>
+</Page>

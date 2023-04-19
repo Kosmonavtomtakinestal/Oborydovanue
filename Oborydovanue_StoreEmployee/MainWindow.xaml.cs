@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Oborydovanue_StoreEmployee.Pages;
 
 namespace Oborydovanue_StoreEmployee
 {
@@ -23,6 +24,8 @@ namespace Oborydovanue_StoreEmployee
         public MainWindow()
         {
             InitializeComponent();
+            SaveSomeData.main = this;
+            MainFrame.Navigate(new AuthPage());
         }
     }
 }

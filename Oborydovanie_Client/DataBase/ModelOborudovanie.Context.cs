@@ -43,7 +43,7 @@ namespace Oborydovanie_Client.DataBase
         public virtual DbSet<Supplier> Supplier { get; set; }
         public virtual DbSet<Supply> Supply { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Rent> Rent { get; set; }
         public virtual DbSet<Client> Client { get; set; }
+        public virtual DbSet<Rent> Rent { get; set; }
     }
 }

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Oborydovanie_Client.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AuthPage">
+      Title="AuthPage" KeyDown="Page_KeyDown">
 
     <Grid>
         <Grid.RowDefinitions>

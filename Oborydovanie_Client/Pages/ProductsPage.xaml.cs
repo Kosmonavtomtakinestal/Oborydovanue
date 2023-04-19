@@ -44,7 +44,6 @@ namespace Oborydovanie_Client.Pages
         private void ToRentBTN_Click(object sender, RoutedEventArgs e)
         {
             SaveSomeData.stock = (sender as Button).DataContext as Stock;
-            MessageBox.Show(((sender as Button).DataContext as Stock).Product.Name);
             SaveSomeData.main.MainFrame.Navigate(new RentPage());
         }
         private void Refresh()
@@ -74,7 +73,7 @@ namespace Oborydovanie_Client.Pages
 
         private void MyRentsBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            SaveSomeData.main.MainFrame.Navigate(new MyRents());
         }
 
         private void SortCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
