@@ -13,10 +13,10 @@ namespace Oborydovanue_Manager.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ArendaEntities : DbContext
+    public partial class ArendaEntities1 : DbContext
     {
-        public ArendaEntities()
-            : base("name=ArendaEntities")
+        public ArendaEntities1()
+            : base("name=ArendaEntities1")
         {
         }
     
@@ -44,6 +44,5 @@ namespace Oborydovanue_Manager.DataBase
         public virtual DbSet<StoreEmployee> StoreEmployee { get; set; }
         public virtual DbSet<Supplier> Supplier { get; set; }
         public virtual DbSet<Supply> Supply { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

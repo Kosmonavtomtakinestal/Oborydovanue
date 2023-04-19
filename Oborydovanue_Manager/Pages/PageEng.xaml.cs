@@ -1,6 +1,9 @@
 ﻿using Oborydovanue_Deliverier.DataBase;
+using Oborydovanue_Manager.DataBase;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,15 +25,31 @@ namespace Oborydovanue_Manager.Pages
     /// </summary>
     public partial class PageEng : Page
     {
+        public IEnumerable<Order> OrderNotInSupply
+        {
+            get { return (IEnumerable<Order>)GetValue(OrderNotInSupplyProperty); }
+            set { SetValue(OrderNotInSupplyProperty, value); }
+        }
+
+        public static readonly DependencyProperty OrderNotInSupplyProperty =
+            DependencyProperty.Register("OrderNotInSupply", typeof(IEnumerable<Order>), typeof(PageEng));
+
+
         public PageEng()
         {
             InitializeComponent();
-
+        
             var db = Connection.db;
 
-            var ordersNotInSupply
-                = db.Order.Where(o => db.Supply.Any(s => s.IdOrder != o.Id));
-            ListEng.ItemsSource = ordersNotInSupply;
+            db.Supplier.Load();
+            db.Order.Load();
+            db.Material.Load();
+
+            OrderNotInSupply
+                = db.Order.Local.Where(x => x.Supply.FirstOrDefault(s => s.IdManager == null) != null);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e) =>
+            new OrderWork((sender as Button).DataContext as Order).ShowDialog();
     }
 }

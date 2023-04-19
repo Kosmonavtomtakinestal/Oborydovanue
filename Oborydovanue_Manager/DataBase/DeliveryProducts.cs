@@ -15,11 +15,11 @@ namespace Oborydovanue_Manager.DataBase
     public partial class DeliveryProducts
     {
         public int Id { get; set; }
-        public int IdDelivery { get; set; }
-        public int IdProduct { get; set; }
-        public int Count { get; set; }
+        public Nullable<int> IdDelivery { get; set; }
+        public Nullable<int> IdStock { get; set; }
+        public Nullable<int> Count { get; set; }
     
         public virtual Delivery Delivery { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual Stock Stock { get; set; }
     }
 }

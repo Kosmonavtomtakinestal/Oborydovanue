@@ -15,9 +15,9 @@ namespace Oborydovanue_Manager.DataBase
     public partial class Delivered
     {
         public int Id { get; set; }
-        public int IdDelivery { get; set; }
-        public int IdStoreemployee { get; set; }
-        public System.DateTime DateTine { get; set; }
+        public Nullable<int> IdDelivery { get; set; }
+        public Nullable<int> IdStoreemployee { get; set; }
+        public Nullable<System.DateTime> DateTine { get; set; }
     
         public virtual Delivery Delivery { get; set; }
         public virtual StoreEmployee StoreEmployee { get; set; }
