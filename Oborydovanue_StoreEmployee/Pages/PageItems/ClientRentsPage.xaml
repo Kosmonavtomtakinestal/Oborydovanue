@@ -32,7 +32,7 @@
                             <TextBlock HorizontalAlignment="Center" Text="{Binding RentTime}"/>
                             <TextBlock HorizontalAlignment="Center">
                                 <TextBlock.Text>
-                                    <MultiBinding StringFormat="{}{0}р. за час">
+                                    <MultiBinding StringFormat="{}{0}р. за день">
                                         <Binding Path="Stock.Product.Price"/>
                                     </MultiBinding>
                                 </TextBlock.Text>
