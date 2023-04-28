@@ -23,6 +23,7 @@ namespace Oborydovanie_Client.Pages
     public partial class MyDataPage : Page
     {
         public static Client client;
+        public static Client client1;
         public int i;
         public MyDataPage(Client _client, int _i)
         {
@@ -30,6 +31,7 @@ namespace Oborydovanie_Client.Pages
             if (_i == 3) LoginTb.IsEnabled = true;
             if (_i == 1 || _i == 2) ReturnPasswordTb.Text = PasswordTb.Text;
             client = _client;
+            client1 = _client;
             DataContext = client;
             i = _i;
         }
@@ -38,10 +40,18 @@ namespace Oborydovanie_Client.Pages
         {
             if (i == 1)
             {
+                if (DataContext != client1)
+                {
+                    DataContext = client1;
+                }
                 SaveSomeData.main.MainFrame.Navigate(new ChoosePointPage());
             }
             else if (i == 2)
             {
+                if (DataContext != client1)
+                {
+                    DataContext = client1;
+                }
                 SaveSomeData.main.MainFrame.Navigate(new ProductsPage());
             }
             else if (i == 3)
@@ -50,6 +60,10 @@ namespace Oborydovanie_Client.Pages
             }
             else if (i == 4)
             {
+                if (DataContext != client1)
+                {
+                    DataContext = client1;
+                }
                 SaveSomeData.main.MainFrame.Navigate(new MyRents());
             }
         }

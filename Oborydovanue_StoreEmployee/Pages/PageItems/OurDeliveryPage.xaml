@@ -26,7 +26,7 @@
 
                         </Grid.ColumnDefinitions>
 
-                        <ListView ItemsSource="{Binding Path=DeliveryProducts}">
+                        <ListView ItemsSource="{Binding Path=DeliveryProducts}" IsEnabled="False">
                             <ListView.ItemTemplate >
                                 <DataTemplate DataType="{x:Type db:DeliveryProducts}" >
                                     <StackPanel Orientation="Horizontal" >
