@@ -17,15 +17,18 @@ namespace Oborydovanue_Manager.DataBase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Stock()
         {
+            this.DeliveryProducts = new HashSet<DeliveryProducts>();
             this.Rent = new HashSet<Rent>();
         }
     
         public int Id { get; set; }
-        public int IdPoinOfIssue { get; set; }
-        public int IdProduct { get; set; }
-        public int Count { get; set; }
-        public int MinCreateCount { get; set; }
+        public Nullable<int> IdPoinOfIssue { get; set; }
+        public Nullable<int> IdProduct { get; set; }
+        public Nullable<int> Count { get; set; }
+        public Nullable<int> MinCreateCount { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DeliveryProducts> DeliveryProducts { get; set; }
         public virtual PointOfIssue PointOfIssue { get; set; }
         public virtual Product Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

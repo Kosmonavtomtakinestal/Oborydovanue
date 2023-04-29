@@ -18,7 +18,6 @@ namespace Oborydovanue_Manager.DataBase
         public Product()
         {
             this.Compound = new HashSet<Compound>();
-            this.DeliveryProducts = new HashSet<DeliveryProducts>();
             this.Stock = new HashSet<Stock>();
         }
     
@@ -26,11 +25,10 @@ namespace Oborydovanue_Manager.DataBase
         public string Name { get; set; }
         public string Discription { get; set; }
         public byte[] Photo { get; set; }
+        public string Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compound> Compound { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DeliveryProducts> DeliveryProducts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Stock> Stock { get; set; }
     }
