@@ -53,5 +53,11 @@ namespace Oborydovanue_Manager.Pages
             //OrderMaterial = (IEnumerable<Order>)db.Order.ToList();
 
         }
+
+        private void supplierListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (supplierListView.SelectedItem == null) return;
+            new OrderPage(supplierListView.SelectedItem as Order) { Owner = ManagerWork.Instance }.ShowDialog();
+        }
     }
 }

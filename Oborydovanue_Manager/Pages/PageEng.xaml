@@ -83,7 +83,13 @@
             </DataGridTemplateColumn>
         </DataGrid.Columns>
     </DataGrid>-->
-    <ListView x:Name="EngListView"  ItemsSource="{Binding OrderNotInSupply}"  Style="{StaticResource ListViewStyle}"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+    <ListView x:Name="EngListView"
+              ItemsSource="{Binding OrderNotInSupply}"
+              Style="{StaticResource ListViewStyle}"
+              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+              VerticalAlignment="Stretch"
+              HorizontalAlignment="Stretch"
+              MouseDoubleClick="EngListView_MouseDoubleClick"   >
 
         <ListView.ItemTemplate>
             <DataTemplate>
