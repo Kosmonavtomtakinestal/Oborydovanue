@@ -51,5 +51,15 @@ namespace Oborydovanue_Manager.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e) =>
             new OrderWork((sender as Button).DataContext as Order).ShowDialog();
+
+        private void EngListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (EngListView.SelectedItem == null) return;
+
+            new OrderPage(EngListView.SelectedItem as Order).ShowDialog();
+
+            OrderNotInSupply
+                = Connection.db.Order.Local.Where(x => x.Supply.FirstOrDefault(s => s.IdManager == null) != null);
+        }
     }
 }
