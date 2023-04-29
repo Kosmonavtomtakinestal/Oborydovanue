@@ -79,5 +79,10 @@ namespace Oborydovanue_StoreEmployee.Pages
         {
             SaveSomeData.productPage.SmallFrame.Navigate(new OurDeliveryPage());
         }
+
+        private void ExitBTN_Click(object sender, RoutedEventArgs e)
+        {
+            SaveSomeData.main.MainFrame.Navigate(new AuthPage());
+        }
     }
 }
