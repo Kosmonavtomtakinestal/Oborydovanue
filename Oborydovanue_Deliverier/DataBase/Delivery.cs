@@ -23,8 +23,8 @@ namespace Oborydovanue_Deliverier.DataBase
     
         public int Id { get; set; }
         public Nullable<System.DateTime> BeginDateTime { get; set; }
-        public int IdPointOfIssue { get; set; }
-        public int IdDeliverier { get; set; }
+        public Nullable<int> IdPointOfIssue { get; set; }
+        public Nullable<int> IdDeliverier { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Delivered> Delivered { get; set; }

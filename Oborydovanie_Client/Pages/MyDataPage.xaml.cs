@@ -22,16 +22,59 @@ namespace Oborydovanie_Client.Pages
     /// </summary>
     public partial class MyDataPage : Page
     {
+        public class NewClient
+        {
+            public int Id { get; set; }
+            public string Login { get; set; }
+            public string Password { get; set; }
+            public string Passport { get; set; }
+            public string Phone { get; set; }
+            public string Surname { get; set; }
+            public string Name { get; set; }
+            public string Patronymic { get; set; }
+        }
+        
         public static Client client;
-        public static Client client1;
+        public static NewClient client1 = new NewClient();
         public int i;
+
+        public static bool Proverka(Client client, NewClient client1)
+        {
+            if (client.Id == client1.Id && client.Login == client1.Login && client.Password == client1.Password && client.Passport == client1.Passport
+                && client.Phone == client1.Phone && client.Surname == client1.Surname && client.Name == client1.Name && client.Patronymic == client1.Patronymic)
+            {
+                return false;
+            }
+            else { return true; }
+        }
+
+        public static Client Prirav(Client client, NewClient client1)
+        {
+            client.Id = client1.Id;
+            client.Login = client1.Login;
+            client.Password = client1.Password;
+            client.Passport = client1.Passport;
+            client.Phone = client1.Phone;
+            client.Surname = client1.Surname;
+            client.Name = client1.Name;
+            client.Patronymic = client1.Patronymic;
+            return client;
+        }
+
         public MyDataPage(Client _client, int _i)
         {
             InitializeComponent();
             if (_i == 3) LoginTb.IsEnabled = true;
             if (_i == 1 || _i == 2) ReturnPasswordTb.Text = PasswordTb.Text;
             client = _client;
-            client1 = _client;
+            client1.Id = client.Id; 
+            client1.Login = client.Login; 
+            client1.Password = client.Password; 
+            client1.Passport = client.Passport; 
+            client1.Phone = client.Phone; 
+            client1.Surname = client.Surname; 
+            client1.Name = client.Name; 
+            client1.Patronymic = client.Patronymic; 
             DataContext = client;
             i = _i;
         }
@@ -40,29 +83,33 @@ namespace Oborydovanie_Client.Pages
         {
             if (i == 1)
             {
-                if (DataContext != client1)
+                if (Proverka(client, client1))
                 {
-                    DataContext = client1;
+                    DataContext = Prirav(client, client1);
                 }
                 SaveSomeData.main.MainFrame.Navigate(new ChoosePointPage());
             }
             else if (i == 2)
             {
-                if (DataContext != client1)
+                if (Proverka(client, client1))
                 {
-                    DataContext = client1;
+                    DataContext = Prirav(client, client1);
                 }
                 SaveSomeData.main.MainFrame.Navigate(new ProductsPage());
             }
             else if (i == 3)
             {
+                if (Proverka(client, client1))
+                {
+                    DataContext = Prirav(client, client1);
+                }
                 SaveSomeData.main.MainFrame.Navigate(new AuthPage());
             }
             else if (i == 4)
             {
-                if (DataContext != client1)
+                if (Proverka(client, client1))
                 {
-                    DataContext = client1;
+                    DataContext = Prirav(client, client1);
                 }
                 SaveSomeData.main.MainFrame.Navigate(new MyRents());
             }
@@ -99,11 +146,6 @@ namespace Oborydovanie_Client.Pages
                     SaveSomeData.main.MainFrame.Navigate(new AuthPage());
                 }
             }
-        }
-
-        private void RusSumb_KeyDown(object sender, KeyEventArgs e)
-        {
-            
         }
 
         private void EngSumb_TextChanged(object sender, TextChangedEventArgs e)
@@ -146,6 +188,11 @@ namespace Oborydovanie_Client.Pages
                     textBox.SelectionLength = 0;
                 }
             }
+        }
+
+        private void ExitBTN_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

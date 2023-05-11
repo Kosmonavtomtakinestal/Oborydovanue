@@ -22,10 +22,10 @@ namespace Oborydovanue_Deliverier.DataBase
         }
     
         public int Id { get; set; }
-        public int IdPoinOfIssue { get; set; }
-        public int IdProduct { get; set; }
-        public int Count { get; set; }
-        public int MinCreateCount { get; set; }
+        public Nullable<int> IdPoinOfIssue { get; set; }
+        public Nullable<int> IdProduct { get; set; }
+        public Nullable<int> Count { get; set; }
+        public Nullable<int> MinCreateCount { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeliveryProducts> DeliveryProducts { get; set; }

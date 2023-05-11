@@ -80,7 +80,7 @@
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" Width="180" Height="30">
                 
-                <Button x:Name="ToDelBTN" Click="ToDelBTN_Click" Grid.Column="4" FontSize="20" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" Content="Оформит заказ" RenderTransformOrigin="0.5,0.504" Height="NaN">
+                <Button x:Name="ToDelBTN" Click="ToDelBTN_Click" Grid.Column="4" FontSize="20" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" Content="Оформить заказ" RenderTransformOrigin="0.5,0.504" Height="NaN">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="Template">
