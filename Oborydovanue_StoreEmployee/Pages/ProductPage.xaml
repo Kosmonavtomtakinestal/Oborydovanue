@@ -33,7 +33,7 @@
                                             <Border x:Name="Borderpox" CornerRadius="15" >
                                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                                     <!--<ContentPresenter Content="{TemplateBinding Content}" />-->
-                                                    <TextBlock  Text="Доаставка" HorizontalAlignment="Center"/>
+                                                    <TextBlock  Text="Доставка" HorizontalAlignment="Center"/>
                                                     <TextBlock  Text="наших" HorizontalAlignment="Center"/>
                                                     <TextBlock  Text="заказов" HorizontalAlignment="Center"/>
                                                 </StackPanel>

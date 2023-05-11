@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Oborydovanue_StoreEmployee"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#FF494949">
+        Title="" Height="450" Width="800" Background="#FF494949">
     <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden">
         
     </Frame>

@@ -32,7 +32,7 @@ namespace Oborydovanie_Client.Pages
         {
             if (TimeStart.Text.Trim() == "" || CountDay.Text.Trim() == "")
             {
-                MessageBox.Show("Заполните все поля", "Уыедомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Заполните все поля", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else if (StartTimeCalendar.SelectedDate < DateTime.Now.Date)
             {

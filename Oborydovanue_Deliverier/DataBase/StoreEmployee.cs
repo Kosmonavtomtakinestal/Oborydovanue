@@ -24,7 +24,7 @@ namespace Oborydovanue_Deliverier.DataBase
         public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public int IdpoinOfIssue { get; set; }
+        public Nullable<int> IdpoinOfIssue { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
