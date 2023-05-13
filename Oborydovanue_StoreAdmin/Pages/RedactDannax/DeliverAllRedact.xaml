@@ -1,0 +1,57 @@
+﻿<Window x:Class="Oborydovanue_StoreAdmin.Pages.RedactDannax.DeliverAllRedact"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Oborydovanue_StoreAdmin.Pages.RedactDannax"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="DeliverAllRedact" Height="600" Width="450" 
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Background="#FF494949" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+           
+        </Grid.ColumnDefinitions>
+
+        <TextBlock  Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding DeliveryObject.BeginDateTime, StringFormat='{}Дата: {0}'}" TextWrapping="NoWrap" FontSize="18" HorizontalAlignment="Center" Style="{StaticResource DarkTextBlockStyle}"/>
+
+      
+        <ComboBox  Grid.ColumnSpan="2" Grid.Row="2"
+                  ItemsSource="{Binding DeliveriersList}"
+                  SelectedItem="{Binding DeliveryObject.Deliverier}"
+                  FontSize="18"   
+                  HorizontalAlignment="Center">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1} {2}">
+                                <Binding Path="Surname"/>
+                                <Binding Path="Name"/>
+                                <Binding Path="Patronymic"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+       
+
+        <Button Content="Сохранить изменения" Style="{StaticResource ButtonStyleZalupa}" Grid.ColumnSpan="4" Grid.Row="6" 
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                x:Name="SaveChangesBtn" FontSize="20"/>
+
+    </Grid>
+</Window>
