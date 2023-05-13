@@ -48,7 +48,7 @@ namespace Oborydovanue_Manager.Pages
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ManagerWork.Instance.IsEnabled = true;
+            OrganizationPAgeWork.Instance.IsEnabled = true;
         }
     }
 }
