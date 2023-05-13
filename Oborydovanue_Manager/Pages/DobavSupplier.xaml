@@ -30,8 +30,8 @@
         <TextBox VerticalAlignment="Center"  Style="{StaticResource DarkTextBoxStyle}"  Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" TextAlignment="Center" 
                                        HorizontalAlignment="Stretch"  FontSize="26" x:Name="PhoneSuplier"/>
 
-        <Button Content="Сохранить изменения" Padding="5" Style="{StaticResource ButtonStyleZalupa}" Grid.ColumnSpan="4" Grid.Row="4" 
+        <Button Content="Сохранить изменения" Style="{StaticResource ButtonStyleZalupa}" Grid.ColumnSpan="4" Grid.Row="4" 
                 VerticalAlignment="Center" HorizontalAlignment="Center"
-                x:Name="SaveChangesBtn"/>
+                x:Name="SaveChangesBtn" FontSize="20"/>
     </Grid>
 </Window>
