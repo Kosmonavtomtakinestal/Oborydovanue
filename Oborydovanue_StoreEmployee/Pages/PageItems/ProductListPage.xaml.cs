@@ -34,5 +34,10 @@ namespace Oborydovanue_StoreEmployee.Pages.PageItems
             new WindowToDelivery(sel).Show();
         }
 
+        private void DelProd_Click(object sender, RoutedEventArgs e)
+        {
+            var sel = (sender as Button).DataContext as Stock;
+            new WindowDelProd(sel).Show();
+        }
     }
 }

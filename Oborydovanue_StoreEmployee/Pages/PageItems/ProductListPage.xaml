@@ -24,6 +24,7 @@
                             <ColumnDefinition MinWidth="80"/>
                             <ColumnDefinition MinWidth="80"/>
                             <ColumnDefinition MinWidth="120"/>
+                            <ColumnDefinition MinWidth="120"/>
                         </Grid.ColumnDefinitions>
 
                         <Image Source="{Binding Product.Photo}" Margin="10"/>
@@ -77,7 +78,29 @@
                                 </Style>
                             </Button.Style>
                         </Button>
-                        
+
+                        <Button x:Name="DelProd" Click="DelProd_Click" Grid.Column="5" FontSize="12" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" Content="Утрачен" RenderTransformOrigin="0.5,0.504" Height="NaN">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border x:Name="Borderpox" CornerRadius="14" >
+                                                    <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                        <Setter Property="Background" TargetName="Borderpox" Value="#FF494949"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
                     </Grid>
 
                 </DataTemplate>

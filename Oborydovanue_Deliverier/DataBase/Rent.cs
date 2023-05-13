@@ -15,11 +15,12 @@ namespace Oborydovanue_Deliverier.DataBase
     public partial class Rent
     {
         public int Id { get; set; }
-        public System.DateTime Date { get; set; }
-        public decimal RentTime { get; set; }
-        public int IdStoreEmployee { get; set; }
-        public int IdClient { get; set; }
-        public int IdStock { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<int> RentTime { get; set; }
+        public Nullable<int> IdStoreEmployee { get; set; }
+        public Nullable<int> IdClient { get; set; }
+        public Nullable<int> IdStock { get; set; }
+        public Nullable<bool> Returned { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Stock Stock { get; set; }
