@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Oborydovanue_Engineer.DataBase;
+using Oborydovanue_Engineer.Windows;
 
 namespace Oborydovanue_Engineer.Pages.VuvodDannax
 {
@@ -22,7 +23,7 @@ namespace Oborydovanue_Engineer.Pages.VuvodDannax
     /// </summary>
     public partial class CompountPage : Page
     {
-        public IEnumerable<Delivery> Products => Connection.db.Delivery.Local;
+        public IEnumerable<Product> Products => Connection.db.Product.Local;
 
         public CompountPage()
         {
@@ -30,6 +31,21 @@ namespace Oborydovanue_Engineer.Pages.VuvodDannax
             Connection.db.Compound.Load();
 
             InitializeComponent();
+
+            EditingElement.MouseDown += (sender, e) => { EditCompond(); };
+        }
+
+        private void EditCompond()
+        {
+            if (DelListView.SelectedItem == null)
+            {
+                return;
+            }
+
+            DataBase.Product objectProduct = DelListView.SelectedItem as DataBase.Product;
+
+            new Pages.RedactDannax.EditCompoundWindow(objectProduct) { Owner = OrganizationPAgeWork.Instance }.Show();
+            OrganizationPAgeWork.Instance.IsEnabled = false;
         }
     }
 }

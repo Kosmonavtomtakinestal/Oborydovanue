@@ -20,9 +20,11 @@ namespace Oborydovanue_Engineer.Windows
     /// </summary>
     public partial class OrganizationPAgeWork : Window
     {
+        public static OrganizationPAgeWork Instance { get; private set; }
         public OrganizationPAgeWork()
         {
             InitializeComponent();
+            Instance = this;
             MainFrame.Navigate(new CompountPage());
         }
 

@@ -148,6 +148,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Pages\RedactDannax\EditCompoundWindow.xaml.cs">
+      <DependentUpon>EditCompoundWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\VuvodDannax\CompountPage.xaml.cs">
       <DependentUpon>CompountPage.xaml</DependentUpon>
     </Compile>
@@ -192,9 +195,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\RedactDannax\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DataBase\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -211,6 +212,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Pages\RedactDannax\EditCompoundWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\VuvodDannax\CompountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

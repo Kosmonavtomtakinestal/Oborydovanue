@@ -21,7 +21,7 @@
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Grid.RowSpan="4">
-            <ListView x:Name="DelListView" ItemsSource="{Binding Products}" Grid.Row="0" Grid.RowSpan="4" Style="{StaticResource ListViewStyle}"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView x:Name="DelListView" SelectionMode="Single" ItemsSource="{Binding Products}" Grid.Row="0" Grid.RowSpan="4" Style="{StaticResource ListViewStyle}"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:ItemsSource="{d:SampleData ItemCount=5}">
 
                 <ListView.ItemsPanel>
 
@@ -34,15 +34,14 @@
                 
                 <ListView.ItemTemplate>
                     <DataTemplate DataType="{x:Type db:Product}">
-                        <Grid Width="250" HorizontalAlignment="Left">
+                        <Grid Width="250" HorizontalAlignment="Left" VerticalAlignment="Top">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Text=""/>
-                            <TextBlock VerticalAlignment="Center" Text="{Binding Name, StringFormat='{}Продукт: {0}'}" TextAlignment="Left" 
+                            <TextBlock VerticalAlignment="Top" Text="{Binding Name, StringFormat='{}Продукт: {0}'}" TextAlignment="Left" 
                                        TextWrapping="NoWrap" HorizontalAlignment="Left"  FontSize="26" Grid.Row="0"/>
-                            <ListView ItemsSource="{Binding Path=Compound}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
+                            <ListView IsEnabled="False" ItemsSource="{Binding Path=Compound}" VerticalAlignment="Top" Grid.Row="1" Style="{StaticResource ListViewStyle}">
                                 <ListView.ItemTemplate >
                                     <DataTemplate DataType="{x:Type db:Compound}" >
                                         <StackPanel Orientation="Horizontal" >
@@ -58,6 +57,17 @@
                     </DataTemplate>
 
                 </ListView.ItemTemplate>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding EnabledSP}" Value="False">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+
             </ListView>
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="4" Margin="10">

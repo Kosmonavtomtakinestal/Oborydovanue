@@ -1,0 +1,98 @@
+﻿<Window x:Class="Oborydovanue_Engineer.Pages.RedactDannax.EditCompoundWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Oborydovanue_Engineer.Pages.RedactDannax"
+        xmlns:db="clr-namespace:Oborydovanue_Engineer.DataBase"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Background="#FF494949"  
+        Title="EditCompoundWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{Binding ProductObject.Name}" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            <StackPanel Height="200" Margin="10" Grid.Row="1" VerticalAlignment="Top">
+                
+                <ListView SelectionMode="Single" x:Name="MatList" Grid.Row="1" Style="{StaticResource ListViewStyle}" Height="130" ItemsSource="{Binding Compounds}" d:ItemsSource="{d:SampleData ItemCount=5}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="{x:Type db:Compound}">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Text="{Binding Material.Name}"/>
+                                <TextBlock Text=" "/>
+                                <TextBlock Text="{Binding Count}"/>
+                                <TextBlock Text=" шт"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <StackPanel Orientation="Horizontal" Margin="10">
+
+                    <TextBlock Text="Количесвто" FontSize="15" VerticalAlignment="Center"/>
+
+                    <TextBox x:Name="Count1TB" Width="100" Style="{StaticResource DarkTextBoxStyle}" FontSize="15" Margin="0"/>
+
+                    <Button Style="{StaticResource ButtonStyleZalupa}" Click="Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Content="Принять"/>
+
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Height="200" Margin="10" VerticalAlignment="Top" >
+
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Style="{StaticResource ListViewStyle}" Height="130" ItemsSource="{Binding Products}" d:ItemsSource="{d:SampleData ItemCount=5}">
+
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate DataType="{x:Type db:Product}">
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                        
+                    </ListView.ItemTemplate>
+
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+
+                </ListView>
+
+                <StackPanel Orientation="Horizontal" Margin="10">
+
+                    <TextBlock Text="Количесвто" FontSize="15" VerticalAlignment="Center"/>
+
+                    <TextBox Width="100" Style="{StaticResource DarkTextBoxStyle}" FontSize="15" Margin="0"/>
+
+                    <Button Style="{StaticResource ButtonStyleZalupa}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Content="Добавить в продукт"/>
+
+                </StackPanel>
+
+            </StackPanel>
+            
+
+        </Grid>
+
+        <Button Content="Сохранить изменения" Style="{StaticResource ButtonStyleZalupa}" 
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                x:Name="SaveChangesBtn" FontSize="20" Grid.Row="1"/>
+
+    </Grid>
+</Window>
