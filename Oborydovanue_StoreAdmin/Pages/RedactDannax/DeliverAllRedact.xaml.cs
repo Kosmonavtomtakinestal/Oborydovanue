@@ -48,7 +48,6 @@ namespace Oborydovanue_StoreAdmin.Pages.RedactDannax
         }
         private void SaveChanges()
         {
-           
 
             Connection.db.SaveChanges();
         }

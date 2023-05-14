@@ -53,10 +53,7 @@
         </ListView>
 
         <Button Height="20" Width="80" VerticalAlignment="Bottom" Content="Принять" Click="Button_Click"/>
-
-
-
-
+        
         <Grid Height="30" Margin="15"  Grid.Row="1">
 
             <Grid.ColumnDefinitions>
