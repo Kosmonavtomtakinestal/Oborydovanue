@@ -30,13 +30,14 @@ namespace Oborydovanue_StoreEmployee.Pages.PageItems
 
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Точно удалить?", "Уведомление", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-            {
-                var sel = (sender as Button).DataContext as Stock;
-                sel.MinCreateCount = 0;
-                SaveSomeData.stocks.Remove(sel);
-                SaveSomeData.productPage.SmallFrame.Navigate(new BookOrderPage());
-            }
+            if (MessageBox.Show("Точно удалить?", "Уведомление", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+                return;
+
+            var sel = (sender as Button).DataContext as Stock;
+            sel.MinCreateCount = 0;
+            SaveSomeData.stocks.Remove(sel);
+            SaveSomeData.productPage.SmallFrame.Navigate(new BookOrderPage());
+           
             
         }
 

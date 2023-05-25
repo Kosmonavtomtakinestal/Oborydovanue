@@ -31,15 +31,7 @@ namespace Oborydovanue_Manager.Pages
 
         public static readonly DependencyProperty OrderManagerProperty =
             DependencyProperty.Register("OrderManager", typeof(IEnumerable<Supply>), typeof(PageManager));
-        //public IEnumerable<Order> OrderMaterial
-        //{
-        //    get { return (IEnumerable<Order>)GetValue(OrderMaterialProperty); }
-        //    set { SetValue(OrderMaterialProperty, value); }
-        //}
-
-        //public static readonly DependencyProperty OrderMaterialProperty =
-        //    DependencyProperty.Register("OrderMaterial", typeof(IEnumerable<Order>), typeof(PageEng));
-
+       
         public PageManager()
         {
             InitializeComponent();
