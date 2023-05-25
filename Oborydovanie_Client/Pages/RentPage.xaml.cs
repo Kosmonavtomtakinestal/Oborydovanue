@@ -27,7 +27,6 @@ namespace Oborydovanie_Client.Pages
             ProductTB.Text = SaveSomeData.stock.Product.Name;
             TimeStart.Text = DateTime.Now.ToShortDateString();
             StartTimeCalendar.SelectedDate = DateTime.Now;
-
         }
 
         private void ToRentBTN_Click(object sender, RoutedEventArgs e)
