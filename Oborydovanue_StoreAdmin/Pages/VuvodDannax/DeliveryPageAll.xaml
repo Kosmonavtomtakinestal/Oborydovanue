@@ -20,7 +20,7 @@
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Grid.RowSpan="4">
-            <ListView x:Name="DelListView" ItemsSource="{Binding Deliveries}" Grid.Row="0" Grid.RowSpan="4" Style="{StaticResource ListViewStyle}"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <ListView x:Name="DelListView" ItemsSource="{Binding Deliveries}" Grid.Row="0" Grid.RowSpan="4" Style="{StaticResource ListViewStyle}"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:ItemsSource="{d:SampleData ItemCount=5}">
                 
                 <ListView.ItemsPanel>
 

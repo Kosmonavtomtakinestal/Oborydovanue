@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "instrymentu", "instrymentu\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oborydovanue_StoreAdmin", "Oborydovanue_StoreAdmin\Oborydovanue_StoreAdmin.csproj", "{6EE71004-CFE7-4003-939A-AD04363786E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oborydovanue_Engineer", "Oborydovanue_Engineer\Oborydovanue_Engineer.csproj", "{B5AD5BAC-371F-4996-A69C-9A5C61CF062E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{6EE71004-CFE7-4003-939A-AD04363786E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EE71004-CFE7-4003-939A-AD04363786E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EE71004-CFE7-4003-939A-AD04363786E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5AD5BAC-371F-4996-A69C-9A5C61CF062E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5AD5BAC-371F-4996-A69C-9A5C61CF062E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5AD5BAC-371F-4996-A69C-9A5C61CF062E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5AD5BAC-371F-4996-A69C-9A5C61CF062E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
