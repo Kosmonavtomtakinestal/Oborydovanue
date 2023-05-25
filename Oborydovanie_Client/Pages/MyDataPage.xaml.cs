@@ -22,17 +22,6 @@ namespace Oborydovanie_Client.Pages
     /// </summary>
     public partial class MyDataPage : Page
     {
-        public class NewClient
-        {
-            public int Id { get; set; }
-            public string Login { get; set; }
-            public string Password { get; set; }
-            public string Passport { get; set; }
-            public string Phone { get; set; }
-            public string Surname { get; set; }
-            public string Name { get; set; }
-            public string Patronymic { get; set; }
-        }
         
         public static Client client;
         public static NewClient client1 = new NewClient();
@@ -45,7 +34,7 @@ namespace Oborydovanie_Client.Pages
             {
                 return false;
             }
-            else { return true; }
+            else return true;
         }
 
         public static Client Prirav(Client client, NewClient client1)
@@ -81,38 +70,7 @@ namespace Oborydovanie_Client.Pages
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (i == 1)
-            {
-                if (Proverka(client, client1))
-                {
-                    DataContext = Prirav(client, client1);
-                }
-                SaveSomeData.main.MainFrame.Navigate(new ChoosePointPage());
-            }
-            else if (i == 2)
-            {
-                if (Proverka(client, client1))
-                {
-                    DataContext = Prirav(client, client1);
-                }
-                SaveSomeData.main.MainFrame.Navigate(new ProductsPage());
-            }
-            else if (i == 3)
-            {
-                if (Proverka(client, client1))
-                {
-                    DataContext = Prirav(client, client1);
-                }
-                SaveSomeData.main.MainFrame.Navigate(new AuthPage());
-            }
-            else if (i == 4)
-            {
-                if (Proverka(client, client1))
-                {
-                    DataContext = Prirav(client, client1);
-                }
-                SaveSomeData.main.MainFrame.Navigate(new MyRents());
-            }
+            SaveSomeData.main.MainFrame.GoBack();
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
@@ -153,10 +111,8 @@ namespace Oborydovanie_Client.Pages
             TextBox textBox = (TextBox)sender;
             string input = textBox.Text;
 
-            // Паттерн для проверки латинских символов
             Regex regex = new Regex("^[a-zA-Z0-9]*$");
 
-            // Если не прошло проверку, то удаляем последний символ из текстбокса
             if (!regex.IsMatch(input))
             {
                 int caretPosition = textBox.SelectionStart - 1;
@@ -174,10 +130,8 @@ namespace Oborydovanie_Client.Pages
             TextBox textBox = (TextBox)sender;
             string input = textBox.Text;
 
-            // Паттерн для проверки латинских символов
             Regex regex = new Regex("^[а-яА-Я]*$");
 
-            // Если не прошло проверку, то удаляем последний символ из текстбокса
             if (!regex.IsMatch(input))
             {
                 int caretPosition = textBox.SelectionStart - 1;
@@ -192,7 +146,7 @@ namespace Oborydovanie_Client.Pages
 
         private void ExitBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            SaveSomeData.main.MainFrame.Navigate(new AuthPage());
         }
     }
 }

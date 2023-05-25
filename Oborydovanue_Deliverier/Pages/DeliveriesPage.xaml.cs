@@ -41,7 +41,7 @@ namespace Oborydovanue_Deliverier.Pages
             var dbItem = (DeliveriesList.SelectedItem as Delivery);
             dbItem.BeginDateTime = DateTime.Now;
             Connection.db.SaveChanges();
-            DeliveriesList.ItemsSource = Connection.db.Delivery.Local.Where(x => x.IdDeliverier == SaveSomeData.deliverier.Id);
+            DeliveriesList.ItemsSource = Connection.db.Delivery.Local.Where(x => x.IdDeliverier == SaveSomeData.deliverier.Id && Connection.db.Delivered.Local.FirstOrDefault(c => c.Delivery == x) == null);
         }
 
     }
