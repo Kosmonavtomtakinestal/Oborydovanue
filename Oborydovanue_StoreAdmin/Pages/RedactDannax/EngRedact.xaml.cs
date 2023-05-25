@@ -40,11 +40,13 @@ namespace Oborydovanue_StoreAdmin.Pages.RedactDannax
                 SurRedact.Text = EngineerObject.Surname;
                 NameRedact.Text = EngineerObject.Name;
                 PatrRedact.Text = EngineerObject.Patronymic;
+
             }
             SaveChangesBtn.Click += (sender, e) => { SavingEndExiting(); };
         }
         private void SavingEndExiting()
         {
+            string a = LoginRedact.Text;
             SaveChanges();
             OrganizationPAgeWork.Instance.MainFrame.Navigate(new EngPageView());
             Close();

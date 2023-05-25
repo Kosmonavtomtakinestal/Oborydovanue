@@ -60,38 +60,56 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
-            <Button x:Name="BackBTN"
-                    Width="30"
+
+            <Border Width="30"
                     Height="30"
                     Grid.Column="0"
-                    Click="BackBTN_Click">
-                <Image Source="/Resources/back.png" />
-            </Button>
+                    CornerRadius="10">
 
-            <TextBlock VerticalAlignment="Center" 
-                       Margin="10 0 0 0" 
-                       HorizontalAlignment="Center"
-                       FontSize="13" 
-                       TextWrapping="Wrap" 
-                       x:Name="DelDatesTB" 
-                       FontWeight="Bold" 
-                       Height="30" 
-                       Foreground="Black" 
-                       Background="#FFD9D9D9"
-                       Grid.Column="1">
-                <!--<TextBlock.Text>
-                    <MultiBinding StringFormat="{}{0} {1}">
-                        <Binding Path="Deliverier.Surname" />
-                        <Binding Path="Deliverier.Name" />
-                    </MultiBinding>
-                </TextBlock.Text>-->
-            </TextBlock>
+                <Button x:Name="BackBTN" Click="BackBTN_Click" FontSize="14" FontWeight="Bold" BorderBrush="Black" OpacityMask="#FFF00000" RenderTransformOrigin="0.5,0.504" Grid.Column="1" Grid.Row="6" Height="NaN">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="Borderpox" CornerRadius="40" >
+                                            <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="White"/>
+                                                <Setter Property="Background" TargetName="Borderpox" Value="#FFBEBCBC"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                    <Button.Content>
+                        <Image Source="/Resources/back.png" MaxHeight="45" MaxWidth="45"/>
+                    </Button.Content>
+                </Button>
+
+            </Border>
+
+            <Border VerticalAlignment="Center" 
+                    Margin="10 0 0 0" 
+                    Grid.Column="1" CornerRadius="10" Background="#FFD9D9D9">
+                <TextBlock 
+                           FontSize="13" 
+                           TextWrapping="Wrap" 
+                           x:Name="DelDatesTB" 
+                           FontWeight="Bold" 
+                           Height="30" 
+                           Foreground="Black" 
+                           HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                </TextBlock>
+            </Border>
 
         </Grid>
 
     </Grid>
-
-
 
 </Page>

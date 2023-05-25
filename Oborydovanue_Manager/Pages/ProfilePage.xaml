@@ -36,6 +36,6 @@
 
         <TextBox VerticalAlignment="Center" Text="{Binding Patronymic}"  Style="{StaticResource DarkTextBoxStyle}"  Grid.Row="4" Grid.Column="2" TextAlignment="Center" Grid.ColumnSpan="2"
                                        HorizontalAlignment="Stretch"  FontSize="26"/>
-        <Button Grid.ColumnSpan="4" Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="Сохранить изменения" Padding="10" x:Name="SavaChanges"/>
+        <Button Grid.ColumnSpan="4" Grid.Row="5" VerticalAlignment="Bottom" FontSize="20" HorizontalAlignment="Center" Style="{DynamicResource ButtonStyleZalupa}" Content="Сохранить изменения" Padding="10" x:Name="SavaChanges"/>
     </Grid>
 </Page>

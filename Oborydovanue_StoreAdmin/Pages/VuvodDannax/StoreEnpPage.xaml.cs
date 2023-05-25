@@ -58,6 +58,7 @@ namespace Oborydovanue_StoreAdmin.Pages.VuvodDannax
             Connection.db.SaveChanges();
             OrganizationPAgeWork.Instance.MainFrame.Navigate(new StoreEnpPage());
         }
+
         public class StEplInfo
         {
             public string Id { get; set; }

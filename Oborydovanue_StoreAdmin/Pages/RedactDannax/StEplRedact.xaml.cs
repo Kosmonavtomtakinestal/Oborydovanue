@@ -66,79 +66,34 @@ namespace Oborydovanue_StoreAdmin.Pages.RedactDannax
         }
         private void LoginRedact_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender; string input = textBox.Text;
-            // Паттерн для проверки латинских символов
-            Regex regex = new Regex("^[a-zA-Z0-9]*$");
-            // Если не прошло проверку, то удаляем последний символ из текстбокса
-            if (!regex.IsMatch(input))
-            {
-                int caretPosition = textBox.SelectionStart - 1;
-                if (caretPosition >= 0)
-                {
-                    textBox.Text = textBox.Text.Remove(caretPosition, 1); textBox.SelectionStart = caretPosition;
-                    textBox.SelectionLength = 0;
-                }
-            }
+            Validating(sender, "^[a-zA-Z0-9]*$");
         }
 
         private void PassRedact_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender; string input = textBox.Text;
-            // Паттерн для проверки латинских символов
-            Regex regex = new Regex("^[a-zA-Z0-9]*$");
-            // Если не прошло проверку, то удаляем последний символ из текстбокса
-            if (!regex.IsMatch(input))
-            {
-                int caretPosition = textBox.SelectionStart - 1;
-                if (caretPosition >= 0)
-                {
-                    textBox.Text = textBox.Text.Remove(caretPosition, 1); textBox.SelectionStart = caretPosition;
-                    textBox.SelectionLength = 0;
-                }
-            }
+            Validating(sender, "^[a-zA-Z0-9]*$");
         }
 
         private void SurRedact_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender; string input = textBox.Text;
-            // Паттерн для проверки латинских символов
-            Regex regex = new Regex("^[а-яА-Я]*$");
-            // Если не прошло проверку, то удаляем последний символ из текстбокса
-            if (!regex.IsMatch(input))
-            {
-                int caretPosition = textBox.SelectionStart - 1;
-                if (caretPosition >= 0)
-                {
-                    textBox.Text = textBox.Text.Remove(caretPosition, 1); textBox.SelectionStart = caretPosition;
-                    textBox.SelectionLength = 0;
-                }
-            }
+            Validating(sender, "^[а-яА-Я]*$");
         }
-
-
 
         private void NameRedact_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender; string input = textBox.Text;
-            // Паттерн для проверки латинских символов
-            Regex regex = new Regex("^[а-яА-Я]*$");
-            // Если не прошло проверку, то удаляем последний символ из текстбокса
-            if (!regex.IsMatch(input))
-            {
-                int caretPosition = textBox.SelectionStart - 1;
-                if (caretPosition >= 0)
-                {
-                    textBox.Text = textBox.Text.Remove(caretPosition, 1); textBox.SelectionStart = caretPosition;
-                    textBox.SelectionLength = 0;
-                }
-            }
+            Validating(sender, "^[а-яА-Я]*$");
         }
 
         private void PatrRedact_TextChanged(object sender, TextChangedEventArgs e)
         {
+            Validating(sender, "^[а-яА-Я]*$");
+        }
+
+        private static void Validating(object sender, string patternForRegex)
+        {
             TextBox textBox = (TextBox)sender; string input = textBox.Text;
             // Паттерн для проверки латинских символов
-            Regex regex = new Regex("^[а-яА-Я]*$");
+            Regex regex = new Regex(patternForRegex);
             // Если не прошло проверку, то удаляем последний символ из текстбокса
             if (!regex.IsMatch(input))
             {
